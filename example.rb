@@ -10,7 +10,7 @@ class Example < Object
     @name
   end
 
-  def initialize(name,date)
+  def initialize name, date
     @name = name
     @date = date.nil? ? Date.today : date
   end
