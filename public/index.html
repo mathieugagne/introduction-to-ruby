@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>reveal.js - The HTML Presentation Framework</title>
+  <title>Introduction to Ruby | By Mathieu Gagné</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -65,7 +65,7 @@
           <ol>
             <li class="fragment">Learn about Ruby's syntax</li>
             <li class="fragment">Browse through Ruby's main structures and methods</li>
-            <li class="fragment">See a few Ruby practices</li>
+            <li class="fragment">See a few Ruby practices like TDD</li>
           </ol>
           <p>
             <h3 class="fragment">How? <span class="fragment">Through code examples!</span></h3>
@@ -76,11 +76,11 @@
           <h2>Our tools today</h2>
           <ul>
             <li class="fragment">Terminal</li>
-            <li class="fragment">Ruby 2.1.0</li>
+            <li class="fragment">irb (Interactive Ruby Shell)</li>
+            <li class="fragment">Ruby 2.1.1</li>
             <li class="fragment">Bundler</li>
             <li class="fragment">Git</li>
             <li class="fragment">Sublime Text</li>
-            <li class="fragment">irb (Interactive Ruby Shell)</li>
             <li class="fragment current-visible">Rails</li>
             <li class="fragment"><strike>Rails</strike></li>
           </ul>
@@ -123,7 +123,6 @@
               See a more comprehensive list <a href="https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-c-and-cpp/">here</a>.
             </p>
             <ul>
-              <li class="fragment">Const-ness is enforced by a naming convention instead</li>
               <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
               <li class="fragment">It’s `self` instead of `this`</li>
               <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
@@ -143,7 +142,9 @@
               y = x + 3
             </code></pre>
             <blockquote>
-              "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
+              <p>
+                "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
+              </p>
               <cite>- Ruby</cite>
             </blockquote>
           </section>
@@ -242,6 +243,7 @@
         </p>
         <ul>
           <li class="fragment">White space and line endings</li>
+          <li class="fragment">dot operator</li>
           <li class="fragment">Comments</li>
           <li class="fragment">Question/Exclamation Marks</li>
           <li class="fragment">
@@ -250,12 +252,16 @@
               <li>Definition and Invocation</li>
               <li>Access Levels (Public, Protected & Private)</li>
               <li>Getters & Setters</li>
-              <li>Attributes</li>
+              <li>Attributes Accessors & metaprogramming</li>
               <li>Optional Parameters</li>
             </ul>
           </li>
+          <li class="fragment">Interpolation</li>
           <li class="fragment">Implicit returns</li>
+          <li class="fragment"><code>||=</code></li>
+          <li class="fragment">Ternary Operator</li>
           <li class="fragment">Case conventions (ex. class names start with a capital letter, variables start with a lowercase letter).</li>
+          <li class="fragment"><code>initialize</code></li>
         </ul>
       </section>
 
@@ -265,6 +271,30 @@
 
       <section>
         <h2>Classes</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Class.html">http://www.ruby-doc.org/core-2.1.1/Class.html</a>
+        </p>
+        <ul>
+          <li>Use <code>.included_modules</code></li>
+          <li>Subclass of Module</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modules</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
+        </p>
+        <ul>
+          <li>Modules serve two purposes in Ruby, namespacing and mix-in functionality.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Objects</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/doc/syntax/modules_and_classes_rdoc.html">http://www.ruby-doc.org/core-2.1.1/doc/syntax/modules_and_classes_rdoc.html</a>
+        </p>
       </section>
 
       <section>
@@ -273,10 +303,6 @@
 
       <section>
         <h2>Methods</h2>
-      </section>
-
-      <section>
-        <h2>Classes</h2>
       </section>
 
       <section>
@@ -289,29 +315,96 @@ $var is a global variable.
       </section>
 
       <section>
-        <h2>Symbol</h2>
+        <h2>Ruby Koans!</h2>
+        <p>
+          Clone the <a href="https://github.com/neo/ruby_koans">repository</a>
+        </p>
+        <pre><code>
+git clone git@github.com:neo/ruby_koans.git
+        </code></pre>
+        <ul>
+          <li>First look at TDD with Ruby</li>
+          <li>Learn about assertion</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Operators</h2>
-        <p>||=</p>
-        <p>if / else</p>
-        <p>Ternary Operator</p>
+        <h2>nil</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/NilClass.html">http://www.ruby-doc.org/core-2.1.1/NilClass.html</a>
+        </p>
+        <pre><code>
+nil.class
+nil.methods - Object.instance_methods
+nil.to_h
+nil.to_a
+nil.to_f
+nil.to_i
+        </code></pre>
       </section>
 
       <section>
-        <h2>Access Control</h2>
+        <h2>Array</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Array.html">http://www.ruby-doc.org/core-2.1.1/Array.html</a>
+        </p>
+        <ul>
+          <li>Can hold objects of any data type</li>
+          <li>Includes Enumerable to iterate through objects</li>
+        </ul>
+        <pre><code>
+[12, 35, 24].max
+array = [12, 35, 24]
+array.sort
+array.sort!
+array
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Hash</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Hash.html">http://www.ruby-doc.org/core-2.1.1/Hash.html</a>
+        </p>
+        <ul>
+          <li>Associates a key to some value</li>
+          <li>Includes Enumerable to iterate through pairs</li>
+        </ul>
+        <pre><code>
+fruit_bowl = {bananas: 2, coconut: 1, apples: 6}
+fruit_bowl.sort
+fruit_bowl.sort_by{|fruit,count| count}
+fruit_bowl.fetch(:apples) == fruit_bowl[:apples]
+fruit_bowl.fetch(:pears)
+fruit_bowl.fetch(:pears, 0)
+fruit_bowl.fetch(:pears) { "What do you mean no pears?" }
+fruit_bowl.fetch(:cocobanana) { [fruit_bowl[:bananas], fruit_bowl[:coconut]].min }
+        </code></pre>
       </section>
 
       <section>
         <h2>String</h2>
-        <p>Interpolation</p>
+        <pre><code class='ruby'>
+"Jimmy".reverse
+"Jimmy".length
+"Jimmy" * 5
+poem = "And the raven, never flitting, still is sitting, still is sitting
+On the pallid bust of Pallas just above my chamber door;
+And his eyes have all the seeming of a demon's that is dreaming,
+And the lamp-light o'er him streaming throws his shadow on the floor;
+And my soul from out that shadow that lies floating on the floor
+Shall be lifted - nevermore!"
+poem['raven'] = 'crow'
+poem #look how the poem has changed the first occurence of <em>raven</em>
+poem.length
+poem.lines.class
+poem.lines.length
+poem.lines.reverse
+        </code></pre>
       </section>
 
       <section>
-        <h2>Numbers</h2>
-        <p>Integer</p>
-        <p>Float</p>
+        <h2>Symbol</h2>
       </section>
 
       <section>
@@ -319,11 +412,11 @@ $var is a global variable.
       </section>
 
       <section>
-        <h2>Hash</h2>
-      </section>
-
-      <section>
-        <h2>Array</h2>
+        <h2>Numbers</h2>
+        <pre><code>
+        </code></pre>
+        <p>Integer</p>
+        <p>Float</p>
       </section>
 
       <section>
@@ -340,7 +433,10 @@ $var is a global variable.
       </section>
 
       <section>
-        <h2>nil</h2>
+        <h2>Regexp</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Regexp.html">http://www.ruby-doc.org/core-2.1.1/Regexp.html</a>
+        </p>
       </section>
 
       <section>
@@ -355,11 +451,11 @@ $var is a global variable.
         <pre><code class='ruby'>
 require 'active_support/all'
 2.week.ago
+3.hours.from_now
 nevermore = 'And my soul from out that shadow that lies floating on the floor shall be lifted - nevermore!'
 nevermore.class
 nevermore.methods
 nevermore.class.superclass
-Object.new.methods
 nevermore.methods - Object.new.methods
 nevermore.truncate(35)
 nevermore.method(:truncate)
@@ -371,26 +467,18 @@ l = nevermore.method(:truncate).source_location
 
       <section>
         <h2>Rails and More Keywords</h2>
-        <p>method_missing</p>
-        <p>initialize</p>
-      </section>
-
-      <section>
-        <h2>Ruby Koans</h2>
-      </section>
-
-      <section>
-        <h2>Ruby Warrior</h2>
-      </section>
-
-      <section>
-        <h2>Screencasts</h2>
-        <p>RubyTapas</p>
+        <ul>
+          <li>initialize</li>
+          <li>method_missing</li>
+          <li>Struct.new</li>
+        </ul>
       </section>
 
       <section>
         <h2>Resources</h2>
         <ul>
+          <li>Ruby Warrior</li>
+          <li>Ruby Tapas</li>
           <li>Ruby Toolbox</li>
         </ul>
       </section>
