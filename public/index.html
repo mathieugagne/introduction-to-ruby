@@ -583,7 +583,7 @@ end
 
       <section>
         <h2>Comparison Operators</h2>
-        <pre><code>
+        <pre><code class='ruby'>
 x == y  # returns true if two things are equal
 x != y  # returns true if two things are not equal
 x <= y  # returns true if x is less than or equal to y
@@ -595,6 +595,16 @@ x > y   # returns true if x is greater than y
 
       <section>
         <h2>if, else, unless, elsif</h2>
+        <pre><code class='ruby'>
+return nil unless user
+if user.signed_in?
+  'logged'
+elsif user.registered?
+  'disconnected'
+else
+ 'please register'
+end
+        </code></pre>
       </section>
 
       <section>
