@@ -1,35 +1,44 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>Introduction to Ruby | By Mathieu Gagné</title>
+    <title>Introduction to Ruby | By Mathieu Gagné</title>
 
-  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-  <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-  <!-- For syntax highlighting -->
-  <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-  <script>
-  if( window.location.search.match( /print-pdf/gi ) ) {
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'css/print/pdf.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  }
-  </script>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+    </script>
+
+    <style>
+      .reveal code {
+        font-size: 0.9em;
+        padding: 0px 8px;
+        background-color: #3F3F3F;
+        color: #DCDCDC;
+      }
+    </style>
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -153,7 +162,7 @@ git clone git@github.com:mathieugagne/introduction-to-ruby.git
             </p>
             <ul>
               <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
-              <li class="fragment">It’s `self` instead of `this`</li>
+              <li class="fragment">It’s <code>self</code> instead of <code>this</code></li>
               <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
             </ul>
             <p>
@@ -282,8 +291,8 @@ git clone git@github.com:mathieugagne/introduction-to-ruby.git
           <li class="fragment">Interpolation</li>
           <li class="fragment">Implicit returns</li>
           <li class="fragment"><code class='ruby'>||=</code></li>
-          <li class="fragment">Ternary Operator</li>
-          <li class="fragment">Case conventions (ex. class names start with a capital letter, variables start with a lowercase letter).</li>
+          <li class="fragment">Ternary Operator: <code class='ruby'>condition ? if_true : if_false</code></li>
+          <li class="fragment">Case conventions: class names start with a capital letter, variables & methods start with a lowercase letter</li>
           <li class="fragment"><code class='ruby'>initialize</code></li>
         </ul>
       </section>
@@ -466,20 +475,19 @@ git clone git@github.com:neo/ruby_koans.git
       </section>
 
       <section>
-        <h2><code class='ruby'>nil</code></h2>
+        <h2>nil</h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/NilClass.html">http://www.ruby-doc.org/core-2.1.1/NilClass.html</a>
         </p>
-        <p class='fragment'>Meanings:
-          <ul>
-            <li>Error</li>
-            <li>Missing Data</li>
-            <li>Flag for 'default behavior'</li>
-            <li>Uninitialized variable</li>
-            <li>Default value for if, unless, empty methods</li>
-            <li>etc.</li>
-          </ul>
-        </p>
+        <p class='fragment'>(Too many) Meanings:</p>
+        <ul class='fragment'>
+          <li>Error</li>
+          <li>Missing Data</li>
+          <li>Flag for 'default behavior'</li>
+          <li>Uninitialized variable</li>
+          <li>Default value for if, unless, empty methods</li>
+          <li>etc.</li>
+        </ul>
         <pre class='fragment'><code class='ruby'>
 nil.class
 nil.methods - Object.instance_methods
