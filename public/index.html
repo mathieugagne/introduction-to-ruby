@@ -228,13 +228,6 @@
       </section>
 
       <section>
-        <h2>Keywords</h2>
-        <p>
-          Let's take a look at the <a href="http://www.ruby-doc.org/core-2.1.1/">API</a>
-        </p>
-      </section>
-
-      <section>
         <h2>Syntax</h2>
         <p>
           <a href="https://github.com/mathieugagne/introduction-to-ruby/blob/master/example.rb">
@@ -246,16 +239,17 @@
           <li class="fragment">dot operator</li>
           <li class="fragment">Comments</li>
           <li class="fragment">Question/Exclamation Marks</li>
-          <li class="fragment">
-            Methods
-            <ul>
-              <li>Definition and Invocation</li>
-              <li>Access Levels (Public, Protected & Private)</li>
-              <li>Getters & Setters</li>
-              <li>Attributes Accessors & metaprogramming</li>
-              <li>Optional Parameters</li>
-            </ul>
-          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Syntax</h2>
+        <p>
+          <a href="https://github.com/mathieugagne/introduction-to-ruby/blob/master/example.rb">
+            https://github.com/mathieugagne/introduction-to-ruby/blob/master/example.rb
+          </a>
+        </p>
+        <ul>
           <li class="fragment">Interpolation</li>
           <li class="fragment">Implicit returns</li>
           <li class="fragment"><code>||=</code></li>
@@ -266,52 +260,166 @@
       </section>
 
       <section>
-        <h2>Terminology</h2>
-      </section>
+        <section>
+          <h2>Terminology</h2>
+          <p>
+            Let's take a look at the <a href="http://www.ruby-doc.org/core-2.1.1/">API</a>
+          </p>
+          <ul>
+            <li>module</li>
+            <li>class</li>
+            <li>object / instance</li>
+            <li>method</li>
+            <li>attribute accessors</li>
+            <li>variables</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Classes</h2>
-        <p>
-          <a href="http://www.ruby-doc.org/core-2.1.1/Class.html">http://www.ruby-doc.org/core-2.1.1/Class.html</a>
-        </p>
-        <ul>
-          <li>Use <code>.included_modules</code></li>
-          <li>Subclass of Module</li>
-        </ul>
-      </section>
+        <section>
+          <h2>Modules</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
+          </p>
+          <ul>
+            <li>Namespacing</li>
+            <li>Holds shared behavior</li>
+            <li>Share behavior</li>
+            <li>Use <code>.included_modules</code> on a Class to see which modules it implements</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Modules</h2>
-        <p>
-          <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
-        </p>
-        <ul>
-          <li>Modules serve two purposes in Ruby, namespacing and mix-in functionality.</li>
-        </ul>
-      </section>
+        <section>
+          <h2>Classes</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Class.html">http://www.ruby-doc.org/core-2.1.1/Class.html</a>
+          </p>
+          <ul>
+            <li>Holds shared behavior</li>
+            <li>Object Factory, Acts as an instance factory</li>
+            <li>Subclass of Module</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Objects</h2>
-        <p>
-          <a href="http://www.ruby-doc.org/core-2.1.1/doc/syntax/modules_and_classes_rdoc.html">http://www.ruby-doc.org/core-2.1.1/doc/syntax/modules_and_classes_rdoc.html</a>
-        </p>
-      </section>
+        <section>
+          <h2>Objects</h2>
+          <p>
+            <a href="http://ruby-doc.org/core-2.1.1/Object.html">http://ruby-doc.org/core-2.1.1/Object.html</a>
+          </p>
+          <ul>
+            <li>Object is the default root of all Ruby objects</li>
+            <li>When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Attributes</h2>
-      </section>
+        <section>
+          <h2>Methods</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Method.html">http://www.ruby-doc.org/core-2.1.1/Method.html</a>
+          </p>
+          <pre><code class="ruby">
+12.methods
+m = 12.method("+")
+m.call(3)    #=> 15
+m.call(20)   #=> 32
+          </code></pre>
+        </section>
 
-      <section>
-        <h2>Methods</h2>
-      </section>
+        <section>
+          <h2>Methods</h2>
+          <p>
+            Access Levels: public, protected, private
+          </p>
+          <ul>
+            <li>Defaults to public</li>
+            <li>protected methods can be called by any instance of the defining class or its subclasses</li>
+            <li>private methods can be called only from within the calling object</li>
+            <li>You cannot access another instance's private methods directly.</li>
+            <li>protected vs private, follow example with dwarf.rb</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Variables</h2>
-        <pre><code>
-var could be a local variable.
-@var is an instance variable.
-$var is a global variable.
-        </code></pre>
+        <section>
+          <h2>Methods</h2>
+          <p>optional parameters</p>
+          <pre><code class="ruby">
+def some_method(name, options={})
+puts options # => {}
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Methods</h2>
+          <p><code class="ruby">return</code> keyword</p>
+          <pre><code class="ruby">
+def some_method(name, options={})
+return options[:name] if options[:name].present?
+do_something_with_name(name)
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Methods</h2>
+          <p>implicit returns, the return value of a method is the value returned by the last statement</p>
+          <pre><code class="ruby">
+def some_method(name)
+  if name == 'Jose'
+    'Hola Jose!'
+  else
+    'Hey'
+  end
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>attr_ .. helpers</h2>
+          <ul>
+            <li>attr_reader: creates a method to read the associated instance variable</li>
+            <li>attr_writer: creates a method to write to the associated instance variable</li>
+            <li>attr_accessor: adds both attr_reader & attr_writer methods</li>
+          </ul>
+          <pre><code class="ruby">
+class Pony
+  attr_accessor :name
+
+  # same as
+  attr_reader :name
+  attr_writer :name
+
+  # same as
+  def name
+    @name
+  end
+  def name=(value)
+    @name = value
+  end
+end
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Variables</h2>
+          <ul>
+            <li><code class="ruby">name</code> could be a local variable, scoped to its immediate definition</li>
+            <li><code class="ruby">@name</code> is an instance variable, scoped to the instance</li>
+            <li><code class="ruby">$name</code> is a global variable, accessable from anywhere.</li>
+            <li>It is not recommended to use global variables. They make programs cryptic.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Pseudo Variables</h2>
+          <ul>
+            <li>self: The receiver object of the current method.</li>
+            <li>true: Value representing true.</li>
+            <li>false: Value representing false.</li>
+            <li>nil: Value representing undefined.</li>
+            <li>__FILE__: The name of the current source file.</li>
+            <li>__LINE__: The current line number in the source file.</li>
+          </ul>
+        </section>
       </section>
 
       <section>
@@ -329,11 +437,21 @@ git clone git@github.com:neo/ruby_koans.git
       </section>
 
       <section>
-        <h2>nil</h2>
+        <h2><code>nil</code></h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/NilClass.html">http://www.ruby-doc.org/core-2.1.1/NilClass.html</a>
         </p>
-        <pre><code>
+        <p class='fragment'>Meanings:
+          <ul>
+            <li>Error</li>
+            <li>Missing Data</li>
+            <li>Flag for 'default behavior'</li>
+            <li>Uninitialized variable</li>
+            <li>Default value for if, unless, empty methods</li>
+            <li>etc.</li>
+          </ul>
+        </p>
+        <pre class='fragment'><code class='ruby'>
 nil.class
 nil.methods - Object.instance_methods
 nil.to_h
@@ -384,6 +502,9 @@ fruit_bowl.fetch(:cocobanana) { [fruit_bowl[:bananas], fruit_bowl[:coconut]].min
 
       <section>
         <h2>String</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/String.html">http://www.ruby-doc.org/core-2.1.1/String.html</a>
+        </p>
         <pre><code class='ruby'>
 "Jimmy".reverse
 "Jimmy".length
@@ -399,37 +520,31 @@ poem #look how the poem has changed the first occurence of <em>raven</em>
 poem.length
 poem.lines.class
 poem.lines.length
-poem.lines.reverse
+poem.freeze
         </code></pre>
       </section>
 
       <section>
         <h2>Symbol</h2>
-      </section>
-
-      <section>
-        <h2>Booleans</h2>
-      </section>
-
-      <section>
-        <h2>Numbers</h2>
-        <pre><code>
-        </code></pre>
-        <p>Integer</p>
-        <p>Float</p>
-      </section>
-
-      <section>
-        <h2>Iterator & Loops</h2>
-      </section>
-
-      <section>
-        <h2>Case / Switch</h2>
-        <p>Code Smell</p>
-      </section>
-
-      <section>
-        <h2>Block</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Symbol.html">http://www.ruby-doc.org/core-2.1.1/Symbol.html</a>
+        </p>
+        <p>
+          Simply a name used in your program
+        </p>
+        <ul>
+          <li>works just like a variable</li>
+          <li>it is immutable after initialization</li>
+          <li>often use in Hash</li>
+          <li>Identical symbols are a single internal object</li>
+          <li><code>==</code> tests for object_id equality</li>
+          <li>Symbols are not strings, do not have the same methods</li>
+          <li>Cannot be concatenated</li>
+          <li>Far more memory efficient than String (40%)</li>
+          <pre><code>Symbol.all_symbols.inspect</code></pre>
+          <li>Symbol are not marked for desctruction by Garbage Collector</li>
+          <li>Watch for memory leaks!</li>
+        </ul>
       </section>
 
       <section>
@@ -437,10 +552,196 @@ poem.lines.reverse
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Regexp.html">http://www.ruby-doc.org/core-2.1.1/Regexp.html</a>
         </p>
+        <p>Regular expressions (regexps) are patterns which describe the contents of a string.</p>
+        <p>
+          <a href="http://regexcrossword.com/">http://regexcrossword.com/</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Booleans</h2>
+        <ul>
+          <li>true, false and nil</li>
+          <li>TrueClass, FalseClass and NilClass</li>
+          <li>&& / and</li>
+          <li>|| / or</li>
+          <li>! / not</li>
+          <li class='fragment'>Warning!! True vs False != Truthey vs Falsey</li>
+          <li class='fragment'>0 is truthey</li>
+          <li class='fragment'>"" is truthey</li>
+          <li class='fragment'>[] is truthey</li>
+        </ul>
+        <pre class='fragment'><code class="ruby">
+name = ''
+if name
+  puts name
+else
+  # will never be executed
+end
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Comparison Operators</h2>
+        <pre><code>
+x == y  # returns true if two things are equal
+x != y  # returns true if two things are not equal
+x <= y  # returns true if x is less than or equal to y
+x >= y  # returns true if x is greater than or equal to y
+x < y   # returns true if x is less than y
+x > y   # returns true if x is greater than y
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>if, else, unless, elsif</h2>
+      </section>
+
+      <section>
+        <section>
+          <h2>Numbers</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Numeric.html">http://www.ruby-doc.org/core-2.1.1/Numeric.html</a>
+          </p>
+          <ul>
+            <li>Integer</li>
+            <li>Float</li>
+            <li>Fixnum</li>
+            <li>Bignum</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Integer</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Integer.html">http://www.ruby-doc.org/core-2.1.1/Integer.html</a>
+          </p>
+          <p>This class is the basis for the two concrete classes that hold whole numbers, Bignum and Fixnum.</p>
+          <pre><code class="ruby">
+7.odd?
+6.even?
+6.downto(1)
+1.upto(6)
+5.downto(1) { |n| print n, ".. " }
+print "  Liftoff!\n"
+#=> "5.. 4.. 3.. 2.. 1..   Liftoff!"
+          </code></pre>
+        </section>
+        <section>
+          <h2>Float</h2>
+          <p>
+            <a href="http://www.ruby-doc.org/core-2.1.1/Float.html">http://www.ruby-doc.org/core-2.1.1/Float.html</a>
+          </p>
+          <p>Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.</p>
+          <pre><code class="ruby">
+1.0 == 1      #=> true
+1.0.eql?(1)   #=> false
+1.2.floor     #=> 1
+          </code></pre>
+        </section>
+        <section>
+
+        </section>
+      </section>
+
+      <section>
+        <h2>Iterator & Loops</h2>
+        <ul>
+          <li><code>for i in 1..5</code>: Executes code once for each element in expression</li>
+          <li>The for loop is used to iterate an object. The Ruby .each method is preferred over the for loop because the for loop does not create a new scope for the object whereas the .each method does. The for loop is rare in Ruby.</li>
+          <li><code>1..5.each do |i|</code>: Same as above. Preferred version</li>
+          <li><code>while</code>: executes code while conditional is true</li>
+          <li><code>until</code>: executes code while conditional is false</li>
+          <li><code>break</code>: terminates the most internal loop</li>
+          <li><code>next</code>: jumps to next iteration of the most internal loop</li>
+          <li><code>redo</code>: restarts this iteration of the most internal loop, without checking loop condition.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Block</h2>
+        <p>You can iterate over the elements in an array using Array.each, which takes a block.</p>
+        <p>A block is a chunk of code that lives inside a control statement, loop, method definition, or method call. It returns the value of its last line. In Ruby, blocks can be created two ways: with braces or with a do/end statement.</p>
+        <pre><code>
+5.times { print "Odelay!" }
+# or
+5.times do
+  print "Odelay!"
+end
+# Try this:
+[1,2,3,4].each { |number| puts number }
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Switch Statement</h2>
+        <ul>
+          <li>Acts like a big if / else if / else chain.</li>
+          <li>Checks a value against a list of cases, and executes the first case that is true.</li>
+          <li>Code Smell</li>
+        </ul>
+        <pre><code class='ruby'>
+a = ["4"]
+case a
+when 1..4, 5
+  puts "It's between 1 and 5"
+when 6
+  puts "It's 6"
+when String then puts "You passed a string"
+else
+  puts "You gave me #{a} -- I have no idea what to do with that."
+end
+        </code></pre>
       </section>
 
       <section>
         <h2>Date / Time / DateTime</h2>
+        <p>
+          <a href="http://ruby-doc.org/core-2.1.1/Time.html">http://ruby-doc.org/core-2.1.1/Time.html</a>
+        </p>
+        <p>Time is an abstraction of dates and times. Time is stored internally as the number of seconds with fraction since the Epoch, January 1, 1970 00:00 UTC</p>
+        <p>Use <a href="http://ruby-doc.org/core-2.1.1/Time.html#method-i-strftime">strftime</a> to generate pretty outputs</p>
+        <pre><code class="ruby">
+t1 = Time.new(1993, 02, 24, 12, 0, 0, "+09:00")
+t2 = Time.now
+t2.thursday?
+t1.strftime('%F') # => "1993-02-24"
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Exceptions</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Exception.html">http://www.ruby-doc.org/core-2.1.1/Exception.html</a>
+        </p>
+        <p>
+          Exception objects carry information about the exception – its type (the exception’s class name), an optional descriptive string, and optional traceback information.
+        </p>
+        <ul>
+          <li>StandardError (default for rescue)</li>
+          <li>RuntimeError (default for raise)</li>
+          <li>NoMethodError (undefined method)</li>
+          <li>ArgumentError</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Rescue / Raise</h2>
+        <pre><code class="ruby">
+def inverse(x)
+  raise ArgumentError, 'Argument is not numeric' unless x.is_a? Numeric
+  1.0 / x
+end
+
+begin
+  inverse(x)
+  #...
+  rescue ArgumentError => ex
+    puts ex.message #=> 'Argument is not numeric'
+  rescue AnoterError => ex
+    puts ex.backtrace.inspect
+  end
+end
+        </code></pre>
       </section>
 
       <section>
@@ -453,10 +754,7 @@ require 'active_support/all'
 2.week.ago
 3.hours.from_now
 nevermore = 'And my soul from out that shadow that lies floating on the floor shall be lifted - nevermore!'
-nevermore.class
-nevermore.methods
-nevermore.class.superclass
-nevermore.methods - Object.new.methods
+nevermore.methods - Object.instance_methods
 nevermore.truncate(35)
 nevermore.method(:truncate)
 l = nevermore.method(:truncate).source_location
@@ -466,283 +764,174 @@ l = nevermore.method(:truncate).source_location
       </section>
 
       <section>
-        <h2>Rails and More Keywords</h2>
-        <ul>
-          <li>initialize</li>
-          <li>method_missing</li>
-          <li>Struct.new</li>
-        </ul>
+        <section>
+          <h2>Useful tips</h2>
+          <ul>
+            <li>method_missing</li>
+            <li>Struct.new</li>
+            <li>Short-circuit and</li>
+            <li>Conditional assignment</li>
+            <li>inline statements</li>
+          </ul>
+        </section>
+        <section>
+          <h2>method_missing</h2>
+          <p>
+            Handles method calls that aren’t previously defined
+          </p>
+          <ul>
+            <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
+            <li>Useful to delegate to another object</li>
+            <li>Handling methods dynamically</li>
+            <li>Let's see with duck.rb</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Struct.new</h2>
+          <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
+          <pre><code class='ruby' data-trim contenteditable>
+Customer = Struct.new(:name, :address) do
+  def greeting
+    "Hello #{name}!"
+  end
+end
+
+dave = Customer.new("Dave", "123 Main")
+dave.name     #=> "Dave"
+dave.greeting #=> "Hello Dave!"
+          </code></pre>
+        </section>
+        <section>
+          <h2>Short-circuit and</h2>
+          <pre><code class='ruby' data-trim contenteditable>
+# Refactor this code:
+if user
+  if user.signed_in?
+    #...
+  end
+end
+          </code></pre>
+          <pre><code class='ruby' data-trim contenteditable>
+# Short-circuit assignment
+tweets = timeline.tweets
+tweets = [] unless tweets
+          </code></pre>
+        </section>
+        <section>
+          <h2>Conditional Assignment</h2>
+          <pre><code class='ruby' data-trim contenteditable>
+# Memoization
+class Toy
+  def owner
+    @owner ||= User.find(self.user_id)
+  end
+end
+
+toy = Toy.new("GI JOE")
+toy.owner     #=> Asks database for User instance
+toy.owner     #=> Already in memory
+          </code></pre>
+          <pre><code class='ruby' data-trim contenteditable>
+# Defaults
+def initialize options={}
+  options[:foo] ||= 'bar'
+end
+          </code></pre>
+        </section>
+        <section>
+          <h2>Inline statements</h2>
+          <pre><code class='ruby' data-trim contenteditable>
+games = ["Super Mario Bros.", "Contra", "Metroid", "Mega Man 2"]
+unless games.empty?
+  puts "Games in your vast collection: #{games.count}"
+end
+          </code></pre>
+        </section>
       </section>
 
       <section>
-        <h2>Resources</h2>
+        <h2>Online Resources</h2>
         <ul>
-          <li>Ruby Warrior</li>
           <li>Ruby Tapas</li>
           <li>Ruby Toolbox</li>
         </ul>
       </section>
 
-      <!-- Example of nested vertical slides -->
       <section>
-        <section>
-          <h2>Vertical Slides</h2>
-          <p>
-            Slides can be nested inside of other slides,
-            try pressing <a href="#" class="navigate-down">down</a>.
-          </p>
-          <a href="#" class="image navigate-down">
-            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-          </a>
-        </section>
-        <section>
-          <h2>Basement Level 1</h2>
-          <p>Press down or up to navigate.</p>
-        </section>
-        <section>
-          <h2>Basement Level 2</h2>
-          <p>Cornify</p>
-          <a class="test" href="http://cornify.com">
-            <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-          </a>
-        </section>
-        <section>
-          <h2>Basement Level 3</h2>
-          <p>That's it, time to go back up.</p>
-          <a href="#/2" class="image">
-            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-          </a>
-        </section>
+        <h2>Additional Training</h2>
+        <ul>
+          <li>Codecademy</li>
+          <li>Code School</li>
+          <li>Ruby Koans</li>
+          <li>Ruby Warrior</li>
+          <li><a href="http://rubybits.codeschool.com/">Ruby Bits</a></li>
+        </ul>
       </section>
 
       <section>
-        <h2>Point of View</h2>
-        <p>
-          Press <strong>ESC</strong> to enter the slide overview.
-        </p>
-        <p>
-          Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-        </p>
+        <h2>Books</h2>
+        <ul>
+          <li><a href="http://pragprog.com/book/ruby/programming-ruby">Pickaxe book</a></li>
+          <li><a href="http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330">
+            Practical Object-Oriented Design in Ruby
+          </a></li>
+          <li><a href="http://www.amazon.com/Eloquent-Ruby-Addison-Wesley-Professional-Series/dp/0321584104">Eloquent Ruby</a></li>
+          <li><a href="http://www.confidentruby.com/">Confident Ruby</a></li>
+        </ul>
       </section>
 
       <section>
-        <h2>Works in Mobile Safari</h2>
-        <p>
-          Try it out! You can swipe through the slides and pinch your way to the overview.
-        </p>
+        <h1>THE END</h1>
+        <h2>Thank You!</h2>
+        <h4>By Mathieu Gagné</h4>
+        <ul>
+          <li><a href='mailto:gagne.mathieu@hotmail.com'>gagne.mathieu@hotmail.com</a></li>
+          <li><a href='https://github.com/mathieugagne'>Github</a></li>
+          <li><a href='http://stackoverflow.com/users/2033014/mathieugagne'>StackOverflow</a></li>
+        </ul>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
-        ## Markdown support
-
-            For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-            ```
-            <section data-markdown>
-            ## Markdown support
-
-            For those of you who like that sort of thing.
-              Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-              </section>
-              ```
-              </script>
-            </section>
-
-            <section id="transitions">
-              <h2>Transition Styles</h2>
-              <p>
-                You can select from different transitions, like: <br>
-                <a href="?transition=cube#/transitions">Cube</a> -
-                <a href="?transition=page#/transitions">Page</a> -
-                <a href="?transition=concave#/transitions">Concave</a> -
-                <a href="?transition=zoom#/transitions">Zoom</a> -
-                <a href="?transition=linear#/transitions">Linear</a> -
-                <a href="?transition=fade#/transitions">Fade</a> -
-                <a href="?transition=none#/transitions">None</a> -
-                <a href="?#/transitions">Default</a>
-              </p>
-            </section>
-
-            <section>
-              <section data-background="#007777">
-                <h2>Slide Backgrounds</h2>
-                <p>
-                  Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-                </p>
-                <a href="#" class="image navigate-down">
-                  <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-                </a>
-              </section>
-              <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-                <h2>Image Backgrounds</h2>
-                <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-              </section>
-              <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-                <h2>Repeated Image Backgrounds</h2>
-                <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-              </section>
-            </section>
-
-            <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-              <h2>Background Transitions</h2>
-              <p>
-                Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-              </p>
-            </section>
-
-            <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-              <h2>Background Transition Override</h2>
-              <p>
-                You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-              </p>
-            </section>
-
-            <section>
-              <h2>Clever Quotes</h2>
-              <p>
-                These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-              </p>
-              <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-                reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-              </blockquote>
-            </section>
-
-            <section>
-              <h2>Pretty Code</h2>
-              <pre><code data-trim contenteditable>
-                function linkify( selector ) {
-                if( supports3DTransforms ) {
-
-                var nodes = document.querySelectorAll( selector );
-
-                for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-                var node = nodes[i];
-
-                if( !node.className ) {
-                node.className += ' roll';
-              }
-            }
-          }
-        }
-      </code></pre>
-      <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-    </section>
-
-    <section>
-      <h2>Intergalactic Interconnections</h2>
-      <p>
-        You can link between slides internally,
-        <a href="#/2/3">like this</a>.
-      </p>
-    </section>
-
-    <section>
-      <section id="fragments">
-        <h2>Fragmented Views</h2>
-        <p>Hit the next arrow...</p>
-        <p class="fragment">... to step through ...</p>
-        <ol>
-          <li class="fragment"><code>any type</code></li>
-          <li class="fragment"><em>of view</em></li>
-          <li class="fragment"><strong>fragments</strong></li>
-        </ol>
-
-        <aside class="notes">
-          This slide has fragments which are also stepped through in the notes window.
-        </aside>
-      </section>
       <section>
-        <h2>Fragment Styles</h2>
-        <p>There's a few styles of fragments, like:</p>
-        <p class="fragment grow">grow</p>
-        <p class="fragment shrink">shrink</p>
-        <p class="fragment roll-in">roll-in</p>
-        <p class="fragment fade-out">fade-out</p>
-        <p class="fragment highlight-red">highlight-red</p>
-        <p class="fragment highlight-green">highlight-green</p>
-        <p class="fragment highlight-blue">highlight-blue</p>
-        <p class="fragment current-visible">current-visible</p>
-        <p class="fragment highlight-current-blue">highlight-current-blue</p>
+        <h2>Questions?</h2>
+        <p class="fragment">Anything you would like to review?</p>
       </section>
-    </section>
 
-    <section>
-      <h2>Spectacular image!</h2>
-      <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-        <img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-      </a>
-    </section>
-
-    <section>
-      <h2>Export to PDF</h2>
-      <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-      <iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-      <script>
-      document.getElementById('slideshare').attributeName = 'allowfullscreen';
-      </script>
-    </section>
-
-    <section>
-      <h2>Take a Moment</h2>
-      <p>
-        Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-        during a presentation.
-      </p>
-    </section>
-
-    <section>
-      <h2>Stellar Links</h2>
-      <ul>
-        <li><a href="http://slid.es">Try the online editor</a></li>
-        <li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-        <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h1>THE END</h1>
-      <h3>BY Hakim El Hattab / hakim.se</h3>
-    </section>
+    </div>
 
   </div>
 
-</div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.min.js"></script>
+  <script>
 
-<script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
 
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+          // Parallax scrolling
+          // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+          // parallaxBackgroundSize: '2100px 900px',
 
-        // Parallax scrolling
-        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-        // parallaxBackgroundSize: '2100px 900px',
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          ]
+        });
 
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-      });
-
-</script>
+  </script>
 
 </body>
 </html>
