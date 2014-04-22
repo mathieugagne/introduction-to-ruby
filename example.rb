@@ -17,7 +17,7 @@ class Example < Object
 
   def titled_name
     @honorific ||= 'Esteemed'
-    titled_name = "#{@honorific} #{@name}"
+    "#{@honorific} #{@name}"
   end
 
   def december_birthdays
@@ -28,6 +28,15 @@ class Example < Object
       end
     end
     born_in_december
+  end
+
+  def born?
+    date <= Date.today
+  end
+
+  def honorify!
+    @name = titled_name
+    self
   end
 
   private
@@ -41,3 +50,6 @@ class Example < Object
     }
   end
 end
+
+require 'active_support/all'
+require 'irb'; IRB.start
