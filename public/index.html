@@ -1,217 +1,218 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-    <title>Introduction to Ruby | By Mathieu Gagné</title>
+  <title>Introduction to Ruby | By Mathieu Gagné</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-    <script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = 'css/print/pdf.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-    </script>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+  </script>
 
-    <style>
-      .reveal code {
-        font-size: 0.9em;
-        padding: 0px 8px;
-        background-color: #3F3F3F;
-        color: #DCDCDC;
-      }
-    </style>
+  <style>
+  .reveal code {
+    font-size: 0.9em;
+    padding: 0px 8px;
+    background-color: #3F3F3F;
+    color: #DCDCDC;
+  }
+  </style>
 
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
-  </head>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
 
-  <body>
+<body>
 
-    <div class="reveal">
+  <div class="reveal">
 
-      <div class="slides">
-        <section>
-          <h2>Introduction to Ruby</h2>
-          <h4>By Mathieu Gagné</h4>
-        </section>
+    <div class="slides">
+      <section>
+        <h2>Introduction to Ruby</h2>
+        <h4>By Mathieu Gagné</h4>
+      </section>
 
-        <section>
-          <h2>Welcome!</h2>
-          <ul>
-            <li class="fragment">Thanks for your interest in Ruby on Rails</li>
-            <li class="fragment">My name is Mathieu Gagné</li>
-            <li class="fragment">Over 5 years experience with Ruby and specifically Rails</li>
-            <li class="fragment">Work with start ups, freelance and web agencies</li>
-            <li class="fragment">Teach at RailsBridge Montreal</li>
-            <li class="fragment">Find me on <a href='https://github.com/mathieugagne'>Github</a> and <a href='http://stackoverflow.com/users/2033014/mathieugagne'>StackOverflow</a></li>
-          </ul>
-        </section>
+      <section>
+        <h2>Welcome!</h2>
+        <ul>
+          <li class="fragment">Thanks for your interest in Ruby on Rails</li>
+          <li class="fragment">My name is Mathieu Gagné</li>
+          <li class="fragment">Over 5 years experience with Ruby and specifically Rails</li>
+          <li class="fragment">Work with start ups, freelance and web agencies</li>
+          <li class="fragment">Teach at RailsBridge Montreal</li>
+          <li class="fragment">Find me on <a href='https://github.com/mathieugagne'>Github</a> and <a href='http://stackoverflow.com/users/2033014/mathieugagne'>StackOverflow</a></li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Who are you?</h2>
-          <ul>
-            <li>Name</li>
-            <li>Background</li>
-            <li>Interest in Ruby</li>
-            <li>Hope to achieve today</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Who are you?</h2>
+        <ul>
+          <li>Name</li>
+          <li>Background</li>
+          <li>Interest in Ruby</li>
+          <li>Hope to achieve today</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Follow along</h2>
+      <section>
+        <h2>Follow along</h2>
+        <p>
+          <a href="http://introduction-to-ruby.herokuapp.com/">http://introduction-to-ruby.herokuapp.com/</a>
+        </p>
+        <pre><code>
+          git clone git@github.com:mathieugagne/introduction-to-ruby.git
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Today's Goals</h2>
+        <ol>
+          <li class="fragment">Learn about Ruby's syntax</li>
+          <li class="fragment">Browse through Ruby's main structures and methods</li>
+          <li class="fragment">Ruby best practices</li>
+        </ol>
+        <p>
+          <h3 class="fragment">How? <span class="fragment">Through code examples!</span></h3>
+        </p>
+      </section>
+
+      <section>
+        <h2>Our tools today</h2>
+        <ul>
+          <li class="fragment">Terminal</li>
+          <li class="fragment">irb (Interactive Ruby Shell)</li>
+          <li class="fragment">Ruby 2.1.1 (latest)</li>
+          <li class="fragment">Bundler</li>
+          <li class="fragment">Git</li>
+          <li class="fragment">Sublime Text</li>
+          <li class="fragment current-visible">Rails</li>
+          <li class="fragment"><strike>Rails</strike></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>A little history</h2>
+        <p>
+          A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+        </p>
+        <ul>
+          <li class="fragment">Creator: Yukihiro “Matz” Matsumoto</li>
+          <li class="fragment">Public Release: 1995</li>
+          <li class="fragment">Free of charge</li>
+          <li class="fragment">Large supportive community</li>
+          <li class="fragment">Emphasis on Open Source</li>
+          <li class="fragment">Biggest hype started around 2006</li>
+          <li class="fragment">MINASWAN (Matz Is Nice And So We Are Nice)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why Ruby?</h2>
+        <p>Some key features:</p>
+        <ul>
+          <li class="fragment">Intuitive English syntax</li>
+          <li class="fragment">Portable: interpreted language running equally well on various platforms</li>
+          <li class="fragment">Extensible: third-party extensions and gems</li>
+          <li class="fragment">General purpose: from scripting to full-fledged Web interfaces</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Similarities to C++</h2>
+        <ul>
+          <li class="fragment">Ruby itself is written in C</li>
+          <li class="fragment">Object-Oriented Design</li>
+          <li class="fragment"><code class='ruby'>public</code>, <code class='ruby'>private</code>, and <code class='ruby'>protected</code> do similar jobs.</li>
+          <li class="fragment">Operators are the same except Ruby doesn’t have ++ or --</li>
+          <li class="fragment">You can also have constants, though there’s no special <code class='ruby'>const</code> keyword</li>
+          <li class="fragment">Inheritance syntax is still only one character, but it’s <code class='ruby'><</code> instead of <code class='ruby'>:</code></li>
+          <li class="fragment">You may put your code into “modules”, similar to how namespace in C++ is used</li>
+          <li class="fragment">Exceptions work in a similar manner</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Differences to C++</h2>
+        <p>
+          See a more comprehensive list <a href="https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-c-and-cpp/">here</a>.
+        </p>
+        <ul>
+          <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
+          <li class="fragment">It’s <code>self</code> instead of <code>this</code></li>
+          <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
+        </ul>
+        <p>
+          <h3 class="fragment">And...</h3>
+        </p>
+      </section>
+
+      <section>
+        <h2>Interpreted at run-time => No compiling!</h2>
+        <p><img src="http://imgs.xkcd.com/comics/compiling.png" width='413' height='360' /></p>
+      </section>
+
+      <section>
+        <h2>Strongly typed</h2>
+        <pre><code class='ruby'>
+          x = "3"
+          y = x + 3
+        </code></pre>
+        <blockquote>
           <p>
-            <a href="http://introduction-to-ruby.herokuapp.com/">http://introduction-to-ruby.herokuapp.com/</a>
+            "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
           </p>
-          <pre><code>
-git clone git@github.com:mathieugagne/introduction-to-ruby.git
-          </code></pre>
-        </section>
+          <cite>- Ruby</cite>
+        </blockquote>
+      </section>
 
-        <section>
-          <h2>Today's Goals</h2>
-          <ol>
-            <li class="fragment">Learn about Ruby's syntax</li>
-            <li class="fragment">Browse through Ruby's main structures and methods</li>
-            <li class="fragment">Ruby best practices</li>
-          </ol>
-          <p>
-            <h3 class="fragment">How? <span class="fragment">Through code examples!</span></h3>
-          </p>
-        </section>
+      <section>
+        <h2>Dynamically typed</h2>
+        <p>
+          Objects are strongly but dynamically typed. The runtime discovers at runtime if that method call actually works
+        </p>
+        <pre><code class='ruby'>
+          x = 3
+          x = "Transformers seems to be a boring movie"
+          x = :why_are_we_here
+          x = /is this a reg ex/
+          x = "enough already... I think we understand"
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>Our tools today</h2>
-          <ul>
-            <li class="fragment">Terminal</li>
-            <li class="fragment">irb (Interactive Ruby Shell)</li>
-            <li class="fragment">Ruby 2.1.1 (latest)</li>
-            <li class="fragment">Bundler</li>
-            <li class="fragment">Git</li>
-            <li class="fragment">Sublime Text</li>
-            <li class="fragment current-visible">Rails</li>
-            <li class="fragment"><strike>Rails</strike></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>A little history</h2>
-          <p>
-            A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
-          </p>
-          <ul>
-            <li class="fragment">Creator: Yukihiro “Matz” Matsumoto</li>
-            <li class="fragment">Public Release: 1995</li>
-            <li class="fragment">Free of charge</li>
-            <li class="fragment">Large supportive community</li>
-            <li class="fragment">Emphasis on Open Source</li>
-            <li class="fragment">Biggest hype started around 2006</li>
-            <li class="fragment">MINASWAN (Matz Is Nice And So We Are Nice)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Why Ruby?</h2>
-          <p>Some key features:</p>
-          <ul>
-            <li class="fragment">Intuitive English syntax</li>
-            <li class="fragment">Portable: interpreted language running equally well on various platforms</li>
-            <li class="fragment">Extensible: third-party extensions and gems</li>
-            <li class="fragment">General purpose: from scripting to full-fledged Web interfaces</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Similarities to C++</h2>
-          <ul>
-            <li class="fragment">Ruby itself is written in C</li>
-            <li class="fragment">Object-Oriented Design</li>
-            <li class="fragment"><code class='ruby'>public</code>, <code class='ruby'>private</code>, and <code class='ruby'>protected</code> do similar jobs.</li>
-            <li class="fragment">Operators are the same except Ruby doesn’t have ++ or --</li>
-            <li class="fragment">You can also have constants, though there’s no special <code class='ruby'>const</code> keyword</li>
-            <li class="fragment">Inheritance syntax is still only one character, but it’s <code class='ruby'><</code> instead of <code class='ruby'>:</code></li>
-            <li class="fragment">You may put your code into “modules”, similar to how namespace in C++ is used</li>
-            <li class="fragment">Exceptions work in a similar manner</li>
-          </ul>
-        </section>
-
-        <section>
-          <section>
-            <h2>Differences to C++</h2>
-            <p>
-              See a more comprehensive list <a href="https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-c-and-cpp/">here</a>.
-            </p>
-            <ul>
-              <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
-              <li class="fragment">It’s <code>self</code> instead of <code>this</code></li>
-              <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
-            </ul>
-            <p>
-              <h3 class="fragment">And...</h3>
-            </p>
-          </section>
-          <section>
-            <h2>Interpreted at run-time => No compiling!</h2>
-            <p><img src="http://imgs.xkcd.com/comics/compiling.png" width='413' height='360' /></p>
-          </section>
-          <section>
-            <h2>Strongly typed</h2>
-            <pre><code class='ruby'>
-              x = "3"
-              y = x + 3
-            </code></pre>
-            <blockquote>
-              <p>
-                "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
-              </p>
-              <cite>- Ruby</cite>
-            </blockquote>
-          </section>
-          <section>
-            <h2>Dynamically typed</h2>
-            <p>
-              Objects are strongly but dynamically typed. The runtime discovers at runtime if that method call actually works
-            </p>
-            <pre><code class='ruby'>
-              x = 3
-              x = "Transformers seems to be a boring movie"
-              x = :why_are_we_here
-              x = /is this a reg ex/
-              x = "enough already... I think we understand"
-            </code></pre>
-          </section>
-          <section>
-            <h2>Monkey Patching</h2>
-            <p>
-              Extend or modify the run-time code of dynamic languages without altering the original source code
-            </p>
-            <br>
-            <p style='text-align:left;'>Examples</p>
-            <ul>
-              <li>Stub out a function during testing</li>
-              <li>Apply a patch at runtime to the objects in memory, instead of the source code on disk</li>
-              <li>Patch existing third-party code as a workaround to a bug or feature which does not act as desired</li>
-            </ul>
-          </section>
+      <section>
+        <h2>Monkey Patching</h2>
+        <p>
+          Extend or modify the run-time code of dynamic languages without altering the original source code
+        </p>
+        <br>
+        <p style='text-align:left;'>Examples</p>
+        <ul>
+          <li>Stub out a function during testing</li>
+          <li>Apply a patch at runtime to the objects in memory, instead of the source code on disk</li>
+          <li>Patch existing third-party code as a workaround to a bug or feature which does not act as desired</li>
         </ul>
       </section>
 
@@ -238,31 +239,30 @@ git clone git@github.com:mathieugagne/introduction-to-ruby.git
       </section>
 
       <section>
-        <section>
-          <h2>Git</h2>
-          <h3>Source Control Manager</h3>
-          <ul>
-            <li>Dominant among Rails developers</li>
-            <li>Local branches</li>
-            <li>Staging Areas & Stashes</li>
-            <li>Easy merging</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Git Commands</h2>
-          <ul>
-            <li>git clone</li>
-            <li>git remote</li>
-            <li>git pull</li>
-            <li>git add</li>
-            <li>git commit</li>
-            <li>git push</li>
-            <li>git log</li>
-            <li>git reset</li>
-            <li>git cherry-pick</li>
-            <li>git stash</li>
-          </ul>
-        </section>
+        <h2>Git</h2>
+        <h3>Source Control Manager</h3>
+        <ul>
+          <li>Dominant among Rails developers</li>
+          <li>Local branches</li>
+          <li>Staging Areas & Stashes</li>
+          <li>Easy merging</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Git Commands</h2>
+        <ul>
+          <li>git clone</li>
+          <li>git remote</li>
+          <li>git pull</li>
+          <li>git add</li>
+          <li>git commit</li>
+          <li>git push</li>
+          <li>git log</li>
+          <li>git reset</li>
+          <li>git cherry-pick</li>
+          <li>git stash</li>
+        </ul>
       </section>
 
       <section>
@@ -298,109 +298,108 @@ git clone git@github.com:mathieugagne/introduction-to-ruby.git
       </section>
 
       <section>
-        <section>
-          <h2>Terminology</h2>
-          <p>
-            Let's take a look at the <a href="http://www.ruby-doc.org/core-2.1.1/">API</a>
-          </p>
-          <ul>
-            <li class="fragment">module</li>
-            <li class="fragment">class</li>
-            <li class="fragment">object / instance</li>
-            <li class="fragment">method</li>
-            <li class="fragment">attribute accessors</li>
-            <li class="fragment">variables</li>
-          </ul>
-        </section>
+        <h2>Terminology</h2>
+        <p>
+          Let's take a look at the <a href="http://www.ruby-doc.org/core-2.1.1/">API</a>
+        </p>
+        <ul>
+          <li class="fragment">module</li>
+          <li class="fragment">class</li>
+          <li class="fragment">object / instance</li>
+          <li class="fragment">method</li>
+          <li class="fragment">attribute accessors</li>
+          <li class="fragment">variables</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Modules</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
-          </p>
-          <ul>
-            <li>Namespacing</li>
-            <li>Holds shared behavior</li>
-            <li>Share behavior</li>
-            <li>Use <code class='ruby'>.included_modules</code> on a Class to see which modules it implements</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Modules</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
+        </p>
+        <ul>
+          <li>Namespacing</li>
+          <li>Holds shared behavior</li>
+          <li>Share behavior</li>
+          <li>Use <code class='ruby'>.included_modules</code> on a Class to see which modules it implements</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Classes</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Class.html">http://www.ruby-doc.org/core-2.1.1/Class.html</a>
-          </p>
-          <ul>
-            <li>Holds shared behavior</li>
-            <li>Object Factory, Acts as an instance factory</li>
-            <li>Subclass of Module</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Classes</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Class.html">http://www.ruby-doc.org/core-2.1.1/Class.html</a>
+        </p>
+        <ul>
+          <li>Holds shared behavior</li>
+          <li>Object Factory, Acts as an instance factory</li>
+          <li>Subclass of Module</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Objects</h2>
-          <p>
-            <a href="http://ruby-doc.org/core-2.1.1/Object.html">http://ruby-doc.org/core-2.1.1/Object.html</a>
-          </p>
-          <ul>
-            <li>Object is the default root of all Ruby objects</li>
-            <li>When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Objects</h2>
+        <p>
+          <a href="http://ruby-doc.org/core-2.1.1/Object.html">http://ruby-doc.org/core-2.1.1/Object.html</a>
+        </p>
+        <ul>
+          <li>Object is the default root of all Ruby objects</li>
+          <li>When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Methods</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Method.html">http://www.ruby-doc.org/core-2.1.1/Method.html</a>
-          </p>
-          <pre><code class="ruby">
+      <section>
+        <h2>Methods</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Method.html">http://www.ruby-doc.org/core-2.1.1/Method.html</a>
+        </p>
+        <pre><code class="ruby">
 12.methods
 m = 12.method("+")
 m.call(3)    #=> 15
 m.call(20)   #=> 32
-          </code></pre>
-        </section>
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>Methods</h2>
-          <p>
-            Access Levels: public, protected, private
-          </p>
-          <ul>
-            <li class="fragment">Defaults to public</li>
-            <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
-            <li class="fragment">private methods can be called only from within the calling object</li>
-            <li class="fragment">You cannot access another instance's private methods directly.</li>
-            <li class="fragment">protected vs private, follow example with dwarf.rb</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Methods</h2>
+        <p>
+          Access Levels: public, protected, private
+        </p>
+        <ul>
+          <li class="fragment">Defaults to public</li>
+          <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
+          <li class="fragment">private methods can be called only from within the calling object</li>
+          <li class="fragment">You cannot access another instance's private methods directly.</li>
+          <li class="fragment">protected vs private, follow example with dwarf.rb</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Methods</h2>
-          <p>optional parameters</p>
-          <pre><code class="ruby">
+      <section>
+        <h2>Methods</h2>
+        <p>optional parameters</p>
+        <pre><code class="ruby">
 def some_method(name, options={})
-puts options # => {}
+  puts options # => {}
 end
-          </code></pre>
-        </section>
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>Methods</h2>
-          <p><code class="ruby">return</code> keyword</p>
-          <pre><code class="ruby">
+      <section>
+        <h2>Methods</h2>
+        <p><code class="ruby">return</code> keyword</p>
+        <pre><code class="ruby">
 def some_method(name, options={})
-return options[:name] if options[:name].present?
-do_something_with_name(name)
+  return options[:name] if options[:name].present?
+  do_something_with_name(name)
 end
-          </code></pre>
-        </section>
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>Methods</h2>
-          <p>implicit returns, the return value of a method is the value returned by the last statement</p>
-          <pre><code class="ruby">
+      <section>
+        <h2>Methods</h2>
+        <p>implicit returns, the return value of a method is the value returned by the last statement</p>
+        <pre><code class="ruby">
 def some_method(name)
   if name == 'Jose'
     'Hola Jose!'
@@ -408,17 +407,17 @@ def some_method(name)
     'Hey'
   end
 end
-          </code></pre>
-        </section>
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>attr_ .. helpers</h2>
-          <ul>
-            <li class="fragment">attr_reader: creates a method to read the associated instance variable</li>
-            <li class="fragment">attr_writer: creates a method to write to the associated instance variable</li>
-            <li class="fragment">attr_accessor: adds both attr_reader & attr_writer methods</li>
-          </ul>
-          <pre><code class="ruby">
+      <section>
+        <h2>attr_ .. helpers</h2>
+        <ul>
+          <li class="fragment">attr_reader: creates a method to read the associated instance variable</li>
+          <li class="fragment">attr_writer: creates a method to write to the associated instance variable</li>
+          <li class="fragment">attr_accessor: adds both attr_reader & attr_writer methods</li>
+        </ul>
+        <pre class="fragment"><code class="ruby">
 class Pony
   attr_accessor :name
 
@@ -434,30 +433,29 @@ class Pony
     @name = value
   end
 end
-          </code></pre>
-        </section>
+        </code></pre>
+      </section>
 
-        <section>
-          <h2>Variables</h2>
-          <ul>
-            <li><code class="ruby">name</code> could be a local variable, scoped to its immediate definition</li>
-            <li><code class="ruby">@name</code> is an instance variable, scoped to the instance</li>
-            <li><code class="ruby">$name</code> is a global variable, accessable from anywhere.</li>
-            <li>It is not recommended to use global variables. They make programs cryptic.</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Variables</h2>
+        <ul>
+          <li class="fragment"><code class="ruby">name</code> could be a local variable, scoped to its immediate definition</li>
+          <li class="fragment"><code class="ruby">@name</code> is an instance variable, scoped to the instance</li>
+          <li class="fragment"><code class="ruby">$name</code> is a global variable, accessable from anywhere.</li>
+          <li class="fragment">It is not recommended to use global variables. They make programs cryptic.</li>
+        </ul>
+      </section>
 
-        <section>
-          <h2>Pseudo Variables</h2>
-          <ul>
-            <li>self: The receiver object of the current method.</li>
-            <li>true: Value representing true.</li>
-            <li>false: Value representing false.</li>
-            <li>nil: Value representing undefined.</li>
-            <li>__FILE__: The name of the current source file.</li>
-            <li>__LINE__: The current line number in the source file.</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Pseudo Variables</h2>
+        <ul>
+          <li>self: The receiver object of the current method.</li>
+          <li>true: Value representing true.</li>
+          <li>false: Value representing false.</li>
+          <li>nil: Value representing undefined.</li>
+          <li>__FILE__: The name of the current source file.</li>
+          <li>__LINE__: The current line number in the source file.</li>
+        </ul>
       </section>
 
       <section>
@@ -466,7 +464,7 @@ end
           Clone the <a href="https://github.com/neo/ruby_koans">repository</a>
         </p>
         <pre><code class='ruby'>
-git clone git@github.com:neo/ruby_koans.git
+          git clone git@github.com:neo/ruby_koans.git
         </code></pre>
         <ul>
           <li>First look at TDD with Ruby</li>
@@ -548,13 +546,13 @@ fruit_bowl.fetch(:cocobanana) { [fruit_bowl[:bananas], fruit_bowl[:coconut]].min
 "Jimmy".length
 "Jimmy" * 5
 poem = "And the raven, never flitting, still is sitting, still is sitting
-On the pallid bust of Pallas just above my chamber door;
-And his eyes have all the seeming of a demon's that is dreaming,
-And the lamp-light o'er him streaming throws his shadow on the floor;
-And my soul from out that shadow that lies floating on the floor
-Shall be lifted - nevermore!"
+  On the pallid bust of Pallas just above my chamber door;
+  And his eyes have all the seeming of a demon's that is dreaming,
+  And the lamp-light o'er him streaming throws his shadow on the floor;
+  And my soul from out that shadow that lies floating on the floor
+  Shall be lifted - nevermore!"
 poem['raven'] = 'crow'
-poem #look how the poem has changed the first occurence of <em>raven</em>
+poem #=> look how the poem has changed the first occurence of <em>raven</em>
 poem.length
 poem.lines.class
 poem.lines.length
@@ -622,87 +620,78 @@ end
       <section>
         <h2>Comparison Operators</h2>
         <pre><code class='ruby'>
-x == y  # returns true if two things are equal
-x != y  # returns true if two things are not equal
-x <= y  # returns true if x is less than or equal to y
-x >= y  # returns true if x is greater than or equal to y
-x < y   # returns true if x is less than y
-x > y   # returns true if x is greater than y
+          x == y  # returns true if two things are equal
+          x != y  # returns true if two things are not equal
+          x <= y  # returns true if x is less than or equal to y
+          x >= y  # returns true if x is greater than or equal to y
+          x < y   # returns true if x is less than y
+          x > y   # returns true if x is greater than y
         </code></pre>
       </section>
 
       <section>
-        <h2>if, else, unless, elsif</h2>
-        <pre><code class='ruby'>
-return nil unless user
-if user.signed_in?
-  'logged'
-elsif user.registered?
-  'disconnected'
-else
- 'please register'
+        <h2>Flow Control</h2>
+        <ul>
+          <li class='fragment'>if / end</li>
+          <li class='fragment'>if / else / end</li>
+          <li class='fragment'>if / elsif / else / end</li>
+          <li class='fragment'>unless / end</li>
+          <li class='fragment current-visible'>unless / else / end</li>
+          <li class="fragment"><strike>unless / else / end</strike></li>
+        </ul>
+        <pre class='fragment'><code class='ruby'>
+def user_status(user)
+  return 'unknown' unless user
+  if user.registered? and user.signed_in?
+    'logged'
+  elsif user.registered?
+    'disconnected'
+  else
+    'please register'
+  end
 end
         </code></pre>
       </section>
 
       <section>
-        <section>
-          <h2>Numbers</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Numeric.html">http://www.ruby-doc.org/core-2.1.1/Numeric.html</a>
-          </p>
-          <ul>
-            <li>Integer</li>
-            <li>Float</li>
-            <li>Fixnum</li>
-            <li>Bignum</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Integer</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Integer.html">http://www.ruby-doc.org/core-2.1.1/Integer.html</a>
-          </p>
-          <p>This class is the basis for the two concrete classes that hold whole numbers, Bignum and Fixnum.</p>
-          <pre><code class="ruby">
-7.odd?
-6.even?
-6.downto(1)
-1.upto(6)
-5.downto(1) { |n| print n, ".. " }
-print "  Liftoff!\n"
+        <h2>Numeric</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Numeric.html">http://www.ruby-doc.org/core-2.1.1/Numeric.html</a>
+        </p>
+        <p>The top-level number class</p>
+        <ul>
+          <li>Integer (Fixnum, Bignum)</li>
+          <li>Float</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Integer</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Integer.html">http://www.ruby-doc.org/core-2.1.1/Integer.html</a>
+        </p>
+        <p>This class is the basis for the two concrete classes that hold whole numbers, Bignum and Fixnum.</p>
+        <pre><code class="ruby">
+7.class       #=> Fixnum
+7.object_id   #=> Always the same. See the rule?
+5432168765138465138464321584643.class       #=> Bignum
+5432168765138465138464321584643.object_id   #=> Never the same
+7.odd?      #=> true
+6.even?     #=> true
+5.downto(1) { |n| print n, ".. " } ; print "  Liftoff!\n"
 #=> "5.. 4.. 3.. 2.. 1..   Liftoff!"
-          </code></pre>
-        </section>
-        <section>
-          <h2>Float</h2>
-          <p>
-            <a href="http://www.ruby-doc.org/core-2.1.1/Float.html">http://www.ruby-doc.org/core-2.1.1/Float.html</a>
-          </p>
-          <p>Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.</p>
-          <pre><code class="ruby">
+        </code></pre>
+      </section>
+      <section>
+        <h2>Float</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/core-2.1.1/Float.html">http://www.ruby-doc.org/core-2.1.1/Float.html</a>
+        </p>
+        <p>Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.</p>
+        <pre><code class="ruby">
 1.0 == 1      #=> true
 1.0.eql?(1)   #=> false
 1.2.floor     #=> 1
-          </code></pre>
-        </section>
-        <section>
-
-        </section>
-      </section>
-
-      <section>
-        <h2>Iterator & Loops</h2>
-        <ul>
-          <li><code class='ruby'>for i in 1..5</code>: Executes code once for each element in expression</li>
-          <li>The for loop is used to iterate an object. The Ruby .each method is preferred over the for loop because the for loop does not create a new scope for the object whereas the .each method does. The for loop is rare in Ruby.</li>
-          <li><code class='ruby'>1..5.each do |i|</code>: Same as above. Preferred version</li>
-          <li><code class='ruby'>while</code>: executes code while conditional is true</li>
-          <li><code class='ruby'>until</code>: executes code while conditional is false</li>
-          <li><code class='ruby'>break</code>: terminates the most internal loop</li>
-          <li><code class='ruby'>next</code>: jumps to next iteration of the most internal loop</li>
-          <li><code class='ruby'>redo</code>: restarts this iteration of the most internal loop, without checking loop condition.</li>
-        </ul>
+        </code></pre>
       </section>
 
       <section>
@@ -718,6 +707,20 @@ end
 # Try this:
 [1,2,3,4].each { |number| puts number }
         </code></pre>
+      </section>
+
+      <section>
+        <h2>Iterator & Loops</h2>
+        <ul>
+          <li><code class='ruby'>while</code>: executes code while condition is true</li>
+          <li><code class='ruby'>until</code>: executes code while condition is false</li>
+          <li><code class='ruby'>break</code>: terminates the most internal loop</li>
+          <li><code class='ruby'>next</code>: jumps to next iteration of the most internal loop</li>
+          <li><code class='ruby'>redo</code>: restarts this iteration of the most internal loop, without checking loop condition.</li>
+          <li><code class='ruby'>for i in 1..5</code>: Executes code once for each element in expression</li>
+          <li><code class='ruby'>[1,2,3,4].each { |number| puts number }</code>: Same as above. Preferred version</li>
+          <li>The <code class='ruby'>for</code> loop is used to iterate an object. The Ruby <code class='ruby'>.each</code> method is preferred over the for loop because the <code class='ruby'>for</code> loop does not create a new scope for the object whereas the .each method does. The <code class='ruby'>for</code> loop is rare in Ruby.</li>
+        </ul>
       </section>
 
       <section>
@@ -783,11 +786,10 @@ end
 begin
   inverse(x)
   #...
-  rescue ArgumentError => ex
-    puts ex.message #=> 'Argument is not numeric'
-  rescue AnoterError => ex
-    puts ex.backtrace.inspect
-  end
+rescue ArgumentError => ex
+  puts ex.message #=> 'Argument is not numeric'
+rescue AnoterError => ex
+  puts ex.backtrace.inspect
 end
         </code></pre>
       </section>
@@ -911,10 +913,11 @@ end
       <section>
         <h2>Additional Training</h2>
         <ul>
+          <li><a href="http://www.codewars.com/?language=ruby">Code Wars</a></li>
+          <li><a href="https://www.bloc.io/ruby-warrior/#/">Ruby Warrior</a></li>
           <li><a href="http://www.codecademy.com/tracks/ruby">Codecademy</a></li>
           <li><a href="https://www.codeschool.com/courses/try-ruby">Code School</a></li>
           <li><a href="http://rubykoans.com/">Ruby Koans</a></li>
-          <li><a href="https://www.bloc.io/ruby-warrior/#/">Ruby Warrior</a></li>
           <li><a href="http://rubybits.codeschool.com/">Ruby Bits</a></li>
         </ul>
       </section>
@@ -941,6 +944,21 @@ end
       </section>
 
       <section>
+        <h2>Questions?</h2>
+        <p class="fragment">Anything you would like to review?</p>
+      </section>
+
+      <section>
+        <h2>Let's train!</h2>
+        <p>
+          <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
+        </p>
+        <p>
+          <a href="http://www.codewars.com/kata/52a1feca5ec9c508d10006f8">Fluent Calculator</a>
+        </p>
+      </section>
+
+      <section>
         <h1>THE END</h1>
         <h2>Thank You!</h2>
         <h4>By Mathieu Gagné</h4>
@@ -949,11 +967,6 @@ end
           <li><a href='https://github.com/mathieugagne'>Github</a></li>
           <li><a href='http://stackoverflow.com/users/2033014/mathieugagne'>StackOverflow</a></li>
         </ul>
-      </section>
-
-      <section>
-        <h2>Questions?</h2>
-        <p class="fragment">Anything you would like to review?</p>
       </section>
 
     </div>
@@ -965,31 +978,31 @@ end
 
   <script>
 
-        // Full list of configuration options available here:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-          controls: true,
-          progress: true,
-          history: true,
-          center: true,
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-          // Parallax scrolling
-          // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-          // parallaxBackgroundSize: '2100px 900px',
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
 
-          // Optional libraries used to extend on reveal.js
-          dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-          ]
-        });
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
 
   </script>
 
