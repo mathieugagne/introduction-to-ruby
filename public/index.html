@@ -61,6 +61,20 @@
         </section>
 
         <section>
+          <h2>Who are you?</h2>
+        </section>
+
+        <section>
+          <h2>Follow along</h2>
+          <p>
+            <a href="http://introduction-to-ruby.herokuapp.com/">http://introduction-to-ruby.herokuapp.com/</a>
+          </p>
+          <pre><code>
+git clone git@github.com:mathieugagne/introduction-to-ruby.git
+          </code></pre>
+        </section>
+
+        <section>
           <h2>Today's Goals</h2>
           <ol>
             <li class="fragment">Learn about Ruby's syntax</li>
@@ -103,14 +117,25 @@
         </section>
 
         <section>
+          <h2>Why Ruby?</h2>
+          <p>Some key features:</p>
+          <ul>
+            <li class="fragment">Intuitive English syntax</li>
+            <li class="fragment">Portable: interpreted language running equally well on various platforms</li>
+            <li class="fragment">Extensible: third-party extensions and gems</li>
+            <li class="fragment">General purpose: from scripting to full-fledged Web interfaces</li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Similarities to C++</h2>
           <ul>
             <li class="fragment">Ruby itself is written in C</li>
             <li class="fragment">Object-Oriented Design</li>
-            <li class="fragment"><code>public</code>, <code>private</code>, and <code>protected</code> do similar jobs.</li>
+            <li class="fragment"><code class='ruby'>public</code>, <code class='ruby'>private</code>, and <code class='ruby'>protected</code> do similar jobs.</li>
             <li class="fragment">Operators are the same except Ruby doesn’t have ++ or --</li>
-            <li class="fragment">You can also have constants, though there’s no special <code>const</code> keyword</li>
-            <li class="fragment">Inheritance syntax is still only one character, but it’s <code><</code> instead of <code>:</code></li>
+            <li class="fragment">You can also have constants, though there’s no special <code class='ruby'>const</code> keyword</li>
+            <li class="fragment">Inheritance syntax is still only one character, but it’s <code class='ruby'><</code> instead of <code class='ruby'>:</code></li>
             <li class="fragment">You may put your code into “modules”, similar to how namespace in C++ is used</li>
             <li class="fragment">Exceptions work in a similar manner</li>
           </ul>
@@ -252,10 +277,10 @@
         <ul>
           <li class="fragment">Interpolation</li>
           <li class="fragment">Implicit returns</li>
-          <li class="fragment"><code>||=</code></li>
+          <li class="fragment"><code class='ruby'>||=</code></li>
           <li class="fragment">Ternary Operator</li>
           <li class="fragment">Case conventions (ex. class names start with a capital letter, variables start with a lowercase letter).</li>
-          <li class="fragment"><code>initialize</code></li>
+          <li class="fragment"><code class='ruby'>initialize</code></li>
         </ul>
       </section>
 
@@ -266,12 +291,12 @@
             Let's take a look at the <a href="http://www.ruby-doc.org/core-2.1.1/">API</a>
           </p>
           <ul>
-            <li>module</li>
-            <li>class</li>
-            <li>object / instance</li>
-            <li>method</li>
-            <li>attribute accessors</li>
-            <li>variables</li>
+            <li class="fragment">module</li>
+            <li class="fragment">class</li>
+            <li class="fragment">object / instance</li>
+            <li class="fragment">method</li>
+            <li class="fragment">attribute accessors</li>
+            <li class="fragment">variables</li>
           </ul>
         </section>
 
@@ -284,7 +309,7 @@
             <li>Namespacing</li>
             <li>Holds shared behavior</li>
             <li>Share behavior</li>
-            <li>Use <code>.included_modules</code> on a Class to see which modules it implements</li>
+            <li>Use <code class='ruby'>.included_modules</code> on a Class to see which modules it implements</li>
           </ul>
         </section>
 
@@ -330,11 +355,11 @@ m.call(20)   #=> 32
             Access Levels: public, protected, private
           </p>
           <ul>
-            <li>Defaults to public</li>
-            <li>protected methods can be called by any instance of the defining class or its subclasses</li>
-            <li>private methods can be called only from within the calling object</li>
-            <li>You cannot access another instance's private methods directly.</li>
-            <li>protected vs private, follow example with dwarf.rb</li>
+            <li class="fragment">Defaults to public</li>
+            <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
+            <li class="fragment">private methods can be called only from within the calling object</li>
+            <li class="fragment">You cannot access another instance's private methods directly.</li>
+            <li class="fragment">protected vs private, follow example with dwarf.rb</li>
           </ul>
         </section>
 
@@ -376,9 +401,9 @@ end
         <section>
           <h2>attr_ .. helpers</h2>
           <ul>
-            <li>attr_reader: creates a method to read the associated instance variable</li>
-            <li>attr_writer: creates a method to write to the associated instance variable</li>
-            <li>attr_accessor: adds both attr_reader & attr_writer methods</li>
+            <li class="fragment">attr_reader: creates a method to read the associated instance variable</li>
+            <li class="fragment">attr_writer: creates a method to write to the associated instance variable</li>
+            <li class="fragment">attr_accessor: adds both attr_reader & attr_writer methods</li>
           </ul>
           <pre><code class="ruby">
 class Pony
@@ -427,7 +452,7 @@ end
         <p>
           Clone the <a href="https://github.com/neo/ruby_koans">repository</a>
         </p>
-        <pre><code>
+        <pre><code class='ruby'>
 git clone git@github.com:neo/ruby_koans.git
         </code></pre>
         <ul>
@@ -437,7 +462,7 @@ git clone git@github.com:neo/ruby_koans.git
       </section>
 
       <section>
-        <h2><code>nil</code></h2>
+        <h2><code class='ruby'>nil</code></h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/NilClass.html">http://www.ruby-doc.org/core-2.1.1/NilClass.html</a>
         </p>
@@ -470,7 +495,7 @@ nil.to_i
           <li>Can hold objects of any data type</li>
           <li>Includes Enumerable to iterate through objects</li>
         </ul>
-        <pre><code>
+        <pre><code class='ruby'>
 [12, 35, 24].max
 array = [12, 35, 24]
 array.sort
@@ -488,7 +513,7 @@ array
           <li>Associates a key to some value</li>
           <li>Includes Enumerable to iterate through pairs</li>
         </ul>
-        <pre><code>
+        <pre><code class='ruby'>
 fruit_bowl = {bananas: 2, coconut: 1, apples: 6}
 fruit_bowl.sort
 fruit_bowl.sort_by{|fruit,count| count}
@@ -537,14 +562,14 @@ poem.freeze
           <li>it is immutable after initialization</li>
           <li>often use in Hash</li>
           <li>Identical symbols are a single internal object</li>
-          <li><code>==</code> tests for object_id equality</li>
+          <li><code class='ruby'>==</code> tests for object_id equality</li>
           <li>Symbols are not strings, do not have the same methods</li>
           <li>Cannot be concatenated</li>
           <li>Far more memory efficient than String (40%)</li>
-          <pre><code>Symbol.all_symbols.inspect</code></pre>
           <li>Symbol are not marked for desctruction by Garbage Collector</li>
           <li>Watch for memory leaks!</li>
         </ul>
+        <pre><code class='ruby'>Symbol.all_symbols.inspect</code></pre>
       </section>
 
       <section>
@@ -656,14 +681,14 @@ print "  Liftoff!\n"
       <section>
         <h2>Iterator & Loops</h2>
         <ul>
-          <li><code>for i in 1..5</code>: Executes code once for each element in expression</li>
+          <li><code class='ruby'>for i in 1..5</code>: Executes code once for each element in expression</li>
           <li>The for loop is used to iterate an object. The Ruby .each method is preferred over the for loop because the for loop does not create a new scope for the object whereas the .each method does. The for loop is rare in Ruby.</li>
-          <li><code>1..5.each do |i|</code>: Same as above. Preferred version</li>
-          <li><code>while</code>: executes code while conditional is true</li>
-          <li><code>until</code>: executes code while conditional is false</li>
-          <li><code>break</code>: terminates the most internal loop</li>
-          <li><code>next</code>: jumps to next iteration of the most internal loop</li>
-          <li><code>redo</code>: restarts this iteration of the most internal loop, without checking loop condition.</li>
+          <li><code class='ruby'>1..5.each do |i|</code>: Same as above. Preferred version</li>
+          <li><code class='ruby'>while</code>: executes code while conditional is true</li>
+          <li><code class='ruby'>until</code>: executes code while conditional is false</li>
+          <li><code class='ruby'>break</code>: terminates the most internal loop</li>
+          <li><code class='ruby'>next</code>: jumps to next iteration of the most internal loop</li>
+          <li><code class='ruby'>redo</code>: restarts this iteration of the most internal loop, without checking loop condition.</li>
         </ul>
       </section>
 
@@ -671,7 +696,7 @@ print "  Liftoff!\n"
         <h2>Block</h2>
         <p>You can iterate over the elements in an array using Array.each, which takes a block.</p>
         <p>A block is a chunk of code that lives inside a control statement, loop, method definition, or method call. It returns the value of its last line. In Ruby, blocks can be created two ways: with braces or with a do/end statement.</p>
-        <pre><code>
+        <pre><code class='ruby'>
 5.times { print "Odelay!" }
 # or
 5.times do
@@ -862,18 +887,21 @@ end
       <section>
         <h2>Online Resources</h2>
         <ul>
-          <li>Ruby Tapas</li>
-          <li>Ruby Toolbox</li>
+          <li><a href="https://www.ruby-lang.org/en/">ruby-lang.org</a></li>
+          <li><a href="http://rubyrogues.com/">Ruby Rogues (podcast)</a></li>
+          <li><a href="http://www.rubyflow.com/">Ruby Flow (news aggregator)</a></li>
+          <li><a href="http://www.rubytapas.com/">Ruby Tapas</a></li>
+          <li><a href="https://www.ruby-toolbox.com/">Ruby Toolbox</a></li>
         </ul>
       </section>
 
       <section>
         <h2>Additional Training</h2>
         <ul>
-          <li>Codecademy</li>
-          <li>Code School</li>
-          <li>Ruby Koans</li>
-          <li>Ruby Warrior</li>
+          <li><a href="http://www.codecademy.com/tracks/ruby">Codecademy</a></li>
+          <li><a href="https://www.codeschool.com/courses/try-ruby">Code School</a></li>
+          <li><a href="http://rubykoans.com/">Ruby Koans</a></li>
+          <li><a href="https://www.bloc.io/ruby-warrior/#/">Ruby Warrior</a></li>
           <li><a href="http://rubybits.codeschool.com/">Ruby Bits</a></li>
         </ul>
       </section>
