@@ -34,10 +34,10 @@ class Example < Object
 
   def famous_birthdays
     birthdays = {
-      'Ludwig van Beethoven' => Date.new(1770,12,16),
-      'Dave Brubeck' => Date.new(1920,12,6),
-      'Buddy Holly' => Date.new(1936,9,7),
-      'Keith Richards' => Date.new(1943,12,18)
+      'Ludwig van Beethoven'  => Date.new(1770,12,16),
+      'Dave Brubeck'          => Date.new(1920,12,6),
+      'Buddy Holly'           => Date.new(1936,9,7),
+      'Keith Richards'        => Date.new(1943,12,18)
     }
   end
 end
