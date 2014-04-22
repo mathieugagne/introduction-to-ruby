@@ -836,7 +836,9 @@ l = nevermore.method(:truncate).source_location
           <h2>Useful tips</h2>
           <ul>
             <li>method_missing</li>
-            <li>Struct.new</li>
+            <li>A <a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a> is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</li>
+            <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
+            <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
             <li>Short-circuit and</li>
             <li>Conditional assignment</li>
             <li>inline statements</li>
@@ -871,6 +873,7 @@ dave.greeting #=> "Hello Dave!"
         </section>
         <section>
           <h2>Short-circuit and</h2>
+          <p>Lazy evaluation</p>
           <pre><code class='ruby' data-trim contenteditable>
 # Refactor this code:
 if user
