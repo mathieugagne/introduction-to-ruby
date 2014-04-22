@@ -141,82 +141,6 @@
       </section>
 
       <section>
-        <h2>Similarities to C++</h2>
-        <ul>
-          <li class="fragment">Ruby itself is written in C</li>
-          <li class="fragment">Object-Oriented Design</li>
-          <li class="fragment"><code class='ruby'>public</code>, <code class='ruby'>private</code>, and <code class='ruby'>protected</code> do similar jobs.</li>
-          <li class="fragment">Operators are the same except Ruby doesn’t have ++ or --</li>
-          <li class="fragment">You can also have constants, though there’s no special <code class='ruby'>const</code> keyword</li>
-          <li class="fragment">Inheritance syntax is still only one character, but it’s <code class='ruby'><</code> instead of <code class='ruby'>:</code></li>
-          <li class="fragment">You may put your code into “modules”, similar to how namespace in C++ is used</li>
-          <li class="fragment">Exceptions work in a similar manner</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Differences to C++</h2>
-        <p>
-          See a more comprehensive list <a href="https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-c-and-cpp/">here</a>.
-        </p>
-        <ul>
-          <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
-          <li class="fragment">It’s <code>self</code> instead of <code>this</code></li>
-          <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
-        </ul>
-        <p>
-          <h3 class="fragment">And...</h3>
-        </p>
-      </section>
-
-      <section>
-        <h2>Interpreted at run-time => No compiling!</h2>
-        <p><img src="http://imgs.xkcd.com/comics/compiling.png" width='413' height='360' /></p>
-      </section>
-
-      <section>
-        <h2>Strongly typed</h2>
-        <pre><code class='ruby'>
-          x = "3"
-          y = x + 3
-        </code></pre>
-        <blockquote>
-          <p>
-            "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
-          </p>
-          <cite>- Ruby</cite>
-        </blockquote>
-      </section>
-
-      <section>
-        <h2>Dynamically typed</h2>
-        <p>
-          Objects are strongly but dynamically typed. The runtime discovers at runtime if that method call actually works
-        </p>
-        <pre><code class='ruby'>
-          x = 3
-          x = "Transformers seems to be a boring movie"
-          x = :why_are_we_here
-          x = /is this a reg ex/
-          x = "enough already... I think we understand"
-        </code></pre>
-      </section>
-
-      <section>
-        <h2>Monkey Patching</h2>
-        <p>
-          Extend or modify the run-time code of dynamic languages without altering the original source code
-        </p>
-        <br>
-        <p style='text-align:left;'>Examples</p>
-        <ul>
-          <li>Stub out a function during testing</li>
-          <li>Apply a patch at runtime to the objects in memory, instead of the source code on disk</li>
-          <li>Patch existing third-party code as a workaround to a bug or feature which does not act as desired</li>
-        </ul>
-      </section>
-
-      <section>
         <h2>Sublime Text</h2>
         <ul>
           <li>Package Manager & Command palette with Ctrl + Shift + P</li>
@@ -262,6 +186,87 @@
           <li>git reset</li>
           <li>git cherry-pick</li>
           <li>git stash</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Similarities to C++</h2>
+        <ul>
+          <li class="fragment">Ruby itself is written in C</li>
+          <li class="fragment">Object-Oriented Design</li>
+          <li class="fragment"><code class='ruby'>public</code>, <code class='ruby'>private</code>, and <code class='ruby'>protected</code> do similar jobs.</li>
+          <li class="fragment">Operators are the same except Ruby doesn’t have ++ or --</li>
+          <li class="fragment">You can also have constants, though there’s no special <code class='ruby'>const</code> keyword</li>
+          <li class="fragment">Inheritance syntax is still only one character, but it’s <code class='ruby'><</code> instead of <code class='ruby'>:</code></li>
+          <li class="fragment">You may put your code into “modules”, similar to how namespace in C++ is used</li>
+          <li class="fragment">Exceptions work in a similar manner</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Differences to C++</h2>
+        <p>
+          See a more comprehensive list <a href="https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-c-and-cpp/">here</a>.
+        </p>
+        <ul>
+          <li class="fragment">When tested for truth, only false and nil evaluate to a false value. Everything else is true (including 0, 0.0, and "0")</li>
+          <li class="fragment">It’s <code>self</code> instead of <code>this</code></li>
+          <li class="fragment">Single inheritance only, <strong>on purpose</strong></li>
+        </ul>
+        <p>
+          <h3 class="fragment">And...</h3>
+        </p>
+      </section>
+
+      <section>
+        <h2>Interpreted at run-time => No compiling!</h2>
+        <p><img src="http://imgs.xkcd.com/comics/compiling.png" width='413' height='360' /></p>
+      </section>
+
+      <section>
+        <h2>Strongly typed</h2>
+        <p>Because once it knows the type of an object, it expects you to do something that makes sense with it</p>
+        <p>As opposed to weakly typed (e.g. Javascript)</p>
+        <div class="fragment">
+          <pre><code class='ruby'>
+            x = "3"
+            y = x + 3
+            #=> TypeError: no implicit conversion of Fixnum into String
+          </code></pre>
+          <blockquote>
+            <p>
+              "What do you want to do with the string '3'? Append the Fixnum 3? What? Are you crazy? Hey look everyone, that guy wants to append the string '3' to the Fixnum 3! Let’s make fun of him!"
+            </p>
+            <cite>- Ruby</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section>
+        <h2>Dynamically typed</h2>
+        <p>
+          Objects are strongly but dynamically typed. The runtime discovers at runtime if that method call actually works
+        </p>
+        <pre><code class='ruby'>
+          x = 3
+          x = "Transformers seems to be a boring movie"
+          x = :why_are_we_here
+          x = /is this a reg ex/
+          x = "enough already... I think we understand"
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Extensibility</h2>
+        <p>
+          Monkey Patching: Extend or modify the run-time code of dynamic languages without altering the original source code
+        </p>
+        <br>
+        <p style='text-align:left;' class='fragment'>Examples</p>
+        <ul>
+          <li class='fragment'>Patch existing third-party code as a workaround to a bug or feature which does not act as desired</li>
+          <li class='fragment'>Stub out a function during testing</li>
+          <li class='fragment'>Apply a patch at runtime to the objects in memory, instead of the source code on disk</li>
         </ul>
       </section>
 
@@ -647,7 +652,7 @@ def user_status(user)
   elsif user.registered?
     'disconnected'
   else
-    'please register'
+    urgent? ? 'please register now!' : 'please register later'
   end
 end
         </code></pre>
@@ -900,6 +905,21 @@ end
       </section>
 
       <section>
+        <h2>Questions?</h2>
+        <p class="fragment">Anything you would like to review?</p>
+      </section>
+
+      <section>
+        <h2>Let's train!</h2>
+        <p>
+          <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
+        </p>
+        <p>
+          <a href="http://www.codewars.com/kata/52a1feca5ec9c508d10006f8">Fluent Calculator</a>
+        </p>
+      </section>
+
+      <section>
         <h2>Online Resources</h2>
         <ul>
           <li><a href="https://www.ruby-lang.org/en/">ruby-lang.org</a></li>
@@ -941,21 +961,6 @@ end
           <li><a href="http://railsbridge-montreal.com/">RailsBridge Montreal</a></li>
           <li><a href="https://groups.google.com/forum/#!forum/montreal-on-rails">Montreal on Rails Google Group</a></li>
         </ul>
-      </section>
-
-      <section>
-        <h2>Questions?</h2>
-        <p class="fragment">Anything you would like to review?</p>
-      </section>
-
-      <section>
-        <h2>Let's train!</h2>
-        <p>
-          <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
-        </p>
-        <p>
-          <a href="http://www.codewars.com/kata/52a1feca5ec9c508d10006f8">Fluent Calculator</a>
-        </p>
       </section>
 
       <section>
