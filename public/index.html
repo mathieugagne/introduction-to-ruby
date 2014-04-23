@@ -778,6 +778,23 @@ t1.strftime('%F') # => "1993-02-24"
       </section>
 
       <section>
+        <h2>Struct</h2>
+        <p><a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">http://www.ruby-doc.org/core-2.1.1/Struct.html</a></p>
+        <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
+        <pre><code class='ruby' data-trim contenteditable>
+Customer = Struct.new(:name, :address) do
+  def greeting
+    "Hello #{name}!"
+  end
+end
+
+dave = Customer.new("Dave", "123 Main")
+dave.name     #=> "Dave"
+dave.greeting #=> "Hello Dave!"
+        </code></pre>
+      </section>
+
+      <section>
         <h2>Exceptions</h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Exception.html">http://www.ruby-doc.org/core-2.1.1/Exception.html</a>
@@ -832,45 +849,17 @@ l = nevermore.method(:truncate).source_location
       </section>
 
       <section>
-        <h2>Useful tips</h2>
+        <h2>Additional usefulness</h2>
+        <p>
+          <a href="http://www.ruby-doc.org/stdlib-2.1.1/">Standard Library</a> includes <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/csv/rdoc/CSV.html">CSV</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/json/rdoc/JSON.html">JSON</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/logger/rdoc/Logger.html">Logger</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/uri/rdoc/URI.html">URI</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/open-uri/rdoc/OpenURI.html">OpenURI</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/tempfile/rdoc/Tempfile.html">Tempfile</a>
+        </p>
         <ul>
-          <li>method_missing</li>
-          <li><a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a></li>
           <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
           <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
           <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/SortedSet.html">SortedSet</a> implements a Set that guarantees that its elements are yielded in sorted order </li>
-          <li>Short-circuit and</li>
-          <li>Conditional assignment</li>
-          <li>inline statements</li>
         </ul>
       </section>
-      <section>
-        <h2>method_missing</h2>
-        <p>
-          Handles method calls that aren’t previously defined
-        </p>
-        <ul>
-          <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
-          <li>Useful to delegate to another object</li>
-          <li>Handling methods dynamically</li>
-          <li>Let's see with duck.rb</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Struct</h2>
-        <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
-        <pre><code class='ruby' data-trim contenteditable>
-Customer = Struct.new(:name, :address) do
-  def greeting
-    "Hello #{name}!"
-  end
-end
 
-dave = Customer.new("Dave", "123 Main")
-dave.name     #=> "Dave"
-dave.greeting #=> "Hello Dave!"
-        </code></pre>
-      </section>
       <section>
         <h2>OpenStruct</h2>
         <p>An OpenStruct is a data structure, similar to a Hash, that allows the definition of arbitrary attributes with their accompanying values. This is accomplished by using Ruby’s metaprogramming to define methods on the class itself.</p>
@@ -891,6 +880,30 @@ australia = OpenStruct.new(:country => "Australia", :population => 20_000_000)
 p australia   #=> &lt;OpenStruct country="Australia" population=20000000&gt;
         </code></pre>
       </section>
+
+      <section>
+        <h2>Useful tips</h2>
+        <ul>
+          <li>method_missing</li>
+          <li>Short-circuit and</li>
+          <li>Conditional assignment</li>
+          <li>inline statements</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>method_missing</h2>
+        <p>
+          Handles method calls that aren’t previously defined
+        </p>
+        <ul>
+          <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
+          <li>Useful to delegate to another object</li>
+          <li>Handling methods dynamically</li>
+          <li>Let's see with duck.rb</li>
+        </ul>
+      </section>
+
       <section>
         <h2>Short-circuit and</h2>
         <p>Lazy evaluation</p>
@@ -909,6 +922,7 @@ tweets = timeline.tweets
 tweets = [] unless tweets
         </code></pre>
       </section>
+
       <section>
         <h2>Conditional Assignment</h2>
         <p>Memoization</p>
@@ -930,6 +944,7 @@ def initialize name, age
 end
         </code></pre>
       </section>
+
       <section>
         <h2>Inline statements</h2>
         <pre><code class='ruby' data-trim contenteditable>
