@@ -835,9 +835,10 @@ l = nevermore.method(:truncate).source_location
         <h2>Useful tips</h2>
         <ul>
           <li>method_missing</li>
-          <li>A <a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a> is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</li>
+          <li><a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a></li>
           <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
           <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
+          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/SortedSet.html">SortedSet</a> implements a Set that guarantees that its elements are yielded in sorted order </li>
           <li>Short-circuit and</li>
           <li>Conditional assignment</li>
           <li>inline statements</li>
@@ -856,7 +857,7 @@ l = nevermore.method(:truncate).source_location
         </ul>
       </section>
       <section>
-        <h2>Struct.new</h2>
+        <h2>Struct</h2>
         <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
         <pre><code class='ruby' data-trim contenteditable>
 Customer = Struct.new(:name, :address) do
@@ -868,6 +869,26 @@ end
 dave = Customer.new("Dave", "123 Main")
 dave.name     #=> "Dave"
 dave.greeting #=> "Hello Dave!"
+        </code></pre>
+      </section>
+      <section>
+        <h2>OpenStruct</h2>
+        <p>An OpenStruct is a data structure, similar to a Hash, that allows the definition of arbitrary attributes with their accompanying values. This is accomplished by using Ruby’s metaprogramming to define methods on the class itself.</p>
+        <pre><code class='ruby'>
+require 'ostruct'
+
+person = OpenStruct.new
+person.name    = "John Smith"
+person.age     = 70
+person.pension = 300
+
+puts person.name     #=> "John Smith"
+puts person.age      #=> 70
+puts person.address  #=> nil
+        </code></pre>
+        <pre><code class='ruby'>
+australia = OpenStruct.new(:country => "Australia", :population => 20_000_000)
+p australia   #=> &lt;OpenStruct country="Australia" population=20000000&gt;
         </code></pre>
       </section>
       <section>
@@ -930,18 +951,26 @@ end
         <p>
           <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
         </p>
+        <p>For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.</p>
         <p>
           <a href="http://www.codewars.com/kata/52a1feca5ec9c508d10006f8">Fluent Calculator</a>
         </p>
+        <p>The goal is to implement simple calculator which uses fluent syntax:</p>
+        <pre><code class="ruby">
+Calc.new.one.plus.two             # Should return 3
+Calc.new.five.minus.six           # Should return -1
+Calc.new.seven.times.two          # Should return 14
+Calc.new.nine.divided_by.three    # Should return 3
+        </code></pre>
       </section>
 
       <section>
         <h2>Online Resources</h2>
         <ul>
           <li><a href="https://www.ruby-lang.org/en/">ruby-lang.org</a></li>
-          <li><a href="http://rubyrogues.com/">Ruby Rogues (podcast)</a></li>
-          <li><a href="http://www.rubyflow.com/">Ruby Flow (news aggregator)</a></li>
-          <li><a href="http://www.rubytapas.com/">Ruby Tapas (screencast)</a></li>
+          <li><a href="http://rubyrogues.com/">Ruby Rogues</a> (podcast)</li>
+          <li><a href="http://www.rubyflow.com/">Ruby Flow</a> (news aggregator)</li>
+          <li><a href="http://www.rubytapas.com/">Ruby Tapas</a> (screencast)</li>
           <li><a href="https://www.ruby-toolbox.com/">Ruby Toolbox</a></li>
         </ul>
       </section>
