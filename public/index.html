@@ -832,34 +832,33 @@ l = nevermore.method(:truncate).source_location
       </section>
 
       <section>
-        <section>
-          <h2>Useful tips</h2>
-          <ul>
-            <li>method_missing</li>
-            <li>A <a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a> is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</li>
-            <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
-            <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
-            <li>Short-circuit and</li>
-            <li>Conditional assignment</li>
-            <li>inline statements</li>
-          </ul>
-        </section>
-        <section>
-          <h2>method_missing</h2>
-          <p>
-            Handles method calls that aren’t previously defined
-          </p>
-          <ul>
-            <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
-            <li>Useful to delegate to another object</li>
-            <li>Handling methods dynamically</li>
-            <li>Let's see with duck.rb</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Struct.new</h2>
-          <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
-          <pre><code class='ruby' data-trim contenteditable>
+        <h2>Useful tips</h2>
+        <ul>
+          <li>method_missing</li>
+          <li>A <a href="http://www.ruby-doc.org/core-2.1.1/Struct.html">Struct</a> is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</li>
+          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
+          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
+          <li>Short-circuit and</li>
+          <li>Conditional assignment</li>
+          <li>inline statements</li>
+        </ul>
+      </section>
+      <section>
+        <h2>method_missing</h2>
+        <p>
+          Handles method calls that aren’t previously defined
+        </p>
+        <ul>
+          <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
+          <li>Useful to delegate to another object</li>
+          <li>Handling methods dynamically</li>
+          <li>Let's see with duck.rb</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Struct.new</h2>
+        <p>A Struct is a convenient way to bundle a number of attributes together, using accessor methods, without having to write an explicit class</p>
+        <pre><code class='ruby' data-trim contenteditable>
 Customer = Struct.new(:name, :address) do
   def greeting
     "Hello #{name}!"
@@ -869,28 +868,28 @@ end
 dave = Customer.new("Dave", "123 Main")
 dave.name     #=> "Dave"
 dave.greeting #=> "Hello Dave!"
-          </code></pre>
-        </section>
-        <section>
-          <h2>Short-circuit and</h2>
-          <p>Lazy evaluation</p>
-          <pre><code class='ruby' data-trim contenteditable>
+        </code></pre>
+      </section>
+      <section>
+        <h2>Short-circuit and</h2>
+        <p>Lazy evaluation</p>
+        <pre><code class='ruby' data-trim contenteditable>
 # Refactor this code:
 if user
   if user.signed_in?
     #...
   end
 end
-          </code></pre>
-          <pre><code class='ruby' data-trim contenteditable>
+        </code></pre>
+        <pre><code class='ruby' data-trim contenteditable>
 # Short-circuit assignment
 tweets = timeline.tweets
 tweets = [] unless tweets
-          </code></pre>
-        </section>
-        <section>
-          <h2>Conditional Assignment</h2>
-          <pre><code class='ruby' data-trim contenteditable>
+        </code></pre>
+      </section>
+      <section>
+        <h2>Conditional Assignment</h2>
+        <pre><code class='ruby' data-trim contenteditable>
 # Memoization
 class Toy
   def owner
@@ -901,23 +900,22 @@ end
 toy = Toy.new("GI JOE")
 toy.owner     #=> Asks database for User instance
 toy.owner     #=> Already in memory
-          </code></pre>
-          <pre><code class='ruby' data-trim contenteditable>
+        </code></pre>
+        <pre><code class='ruby' data-trim contenteditable>
 # Defaults
 def initialize options={}
   options[:foo] ||= 'bar'
 end
-          </code></pre>
-        </section>
-        <section>
-          <h2>Inline statements</h2>
-          <pre><code class='ruby' data-trim contenteditable>
+        </code></pre>
+      </section>
+      <section>
+        <h2>Inline statements</h2>
+        <pre><code class='ruby' data-trim contenteditable>
 games = ["Super Mario Bros.", "Contra", "Metroid", "Mega Man 2"]
 unless games.empty?
   puts "Games in your vast collection: #{games.count}"
 end
-          </code></pre>
-        </section>
+        </code></pre>
       </section>
 
       <section>
