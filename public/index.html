@@ -881,16 +881,17 @@ if user
   end
 end
         </code></pre>
+        <p>Short-circuit assignment</p>
         <pre><code class='ruby' data-trim contenteditable>
-# Short-circuit assignment
+# Refactor this code:
 tweets = timeline.tweets
 tweets = [] unless tweets
         </code></pre>
       </section>
       <section>
         <h2>Conditional Assignment</h2>
-        <pre><code class='ruby' data-trim contenteditable>
-# Memoization
+        <p>Memoization</p>
+        <pre><code class='ruby'>
 class Toy
   def owner
     @owner ||= User.find(self.user_id)
@@ -901,16 +902,17 @@ toy = Toy.new("GI JOE")
 toy.owner     #=> Asks database for User instance
 toy.owner     #=> Already in memory
         </code></pre>
-        <pre><code class='ruby' data-trim contenteditable>
-# Defaults
-def initialize options={}
-  options[:foo] ||= 'bar'
+        <p>Assign defaults</p>
+        <pre><code class='ruby'>
+def initialize name, age
+  age ||= infer_age_from_name
 end
         </code></pre>
       </section>
       <section>
         <h2>Inline statements</h2>
         <pre><code class='ruby' data-trim contenteditable>
+# Refactor this code:
 games = ["Super Mario Bros.", "Contra", "Metroid", "Mega Man 2"]
 unless games.empty?
   puts "Games in your vast collection: #{games.count}"
