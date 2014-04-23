@@ -105,9 +105,9 @@
           <li class="fragment">Terminal</li>
           <li class="fragment">irb (Interactive Ruby Shell)</li>
           <li class="fragment">Ruby 2.1.1 (latest)</li>
-          <li class="fragment">Bundler</li>
-          <li class="fragment">Git</li>
-          <li class="fragment">Sublime Text</li>
+          <!-- <li class="fragment">Bundler</li> -->
+          <!-- <li class="fragment">Git</li> -->
+          <!-- <li class="fragment">Sublime Text</li> -->
           <li class="fragment current-visible">Rails</li>
           <li class="fragment"><strike>Rails</strike></li>
         </ul>
@@ -140,7 +140,7 @@
         </ul>
       </section>
 
-      <section>
+<!--       <section>
         <h2>Sublime Text</h2>
         <ul>
           <li>Package Manager & Command palette with Ctrl + Shift + P</li>
@@ -187,7 +187,7 @@
           <li>git cherry-pick</li>
           <li>git stash</li>
         </ul>
-      </section>
+      </section> -->
 
       <section>
         <h2>Similarities to C++</h2>
@@ -268,6 +268,23 @@
           <li class='fragment'>Stub out a function during testing</li>
           <li class='fragment'>Apply a patch at runtime to the objects in memory, instead of the source code on disk</li>
         </ul>
+      </section>
+
+      <section>
+        <p>
+          In Ruby, classes are never closed: methods can always be added to an existing class. This applies to all classes, including the standard, built-in classes.
+        </p>
+        <pre><code class='ruby'>
+# re-open Ruby's Time class
+class Time
+  def yesterday
+    self - 86400
+  end
+end
+ 
+today = Time.now               # => 2013-09-03 16:09:37 +0300
+yesterday = today.yesterday    # => 2013-09-02 16:09:37 +0300
+        </code></pre>
       </section>
 
       <section>
@@ -851,12 +868,19 @@ l = nevermore.method(:truncate).source_location
       <section>
         <h2>Additional usefulness</h2>
         <p>
-          <a href="http://www.ruby-doc.org/stdlib-2.1.1/">Standard Library</a> includes <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/csv/rdoc/CSV.html">CSV</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/json/rdoc/JSON.html">JSON</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/logger/rdoc/Logger.html">Logger</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/uri/rdoc/URI.html">URI</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/open-uri/rdoc/OpenURI.html">OpenURI</a>, <a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/tempfile/rdoc/Tempfile.html">Tempfile</a>
+          <a href="http://www.ruby-doc.org/stdlib-2.1.1/">Standard Library</a>
         </p>
         <ul>
-          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
-          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
-          <li><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/SortedSet.html">SortedSet</a> implements a Set that guarantees that its elements are yielded in sorted order </li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/csv/rdoc/CSV.html">CSV</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/json/rdoc/JSON.html">JSON</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/logger/rdoc/Logger.html">Logger</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/uri/rdoc/URI.html">URI</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/open-uri/rdoc/OpenURI.html">OpenURI</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/tempfile/rdoc/Tempfile.html">Tempfile</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/Set.html">Set</a> implements a collection of unordered values with no duplicates</li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/set/rdoc/SortedSet.html">SortedSet</a> implements a Set that guarantees that its elements are yielded in sorted order </li>
+          <li class='fragment'><a href="http://www.ruby-doc.org/stdlib-2.1.1/libdoc/ostruct/rdoc/OpenStruct.html">OpenStruct</a></li>
         </ul>
       </section>
 
