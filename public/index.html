@@ -277,13 +277,13 @@
         <pre><code class='ruby'>
 # re-open Ruby's Time class
 class Time
-  def yesterday
-    self - 86400
+  def self.yesterday
+    now - 86400
   end
 end
- 
-today = Time.now               # => 2013-09-03 16:09:37 +0300
-yesterday = today.yesterday    # => 2013-09-02 16:09:37 +0300
+
+today = Time.now              # => 2013-09-03 16:09:37 +0300
+yesterday = Time.yesterday    # => 2013-09-02 16:09:37 +0300
         </code></pre>
       </section>
 
