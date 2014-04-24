@@ -367,9 +367,8 @@ Whale.included_modules  #=> [Animal::Mammel, Kernel]
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Method.html">http://www.ruby-doc.org/core-2.1.1/Method.html</a>
         </p>
-        <p>
-          A function inside a class is called a method.
-        </p>
+        <p>A <em>function</em> inside a class is called a <em>method</em>.</p>
+        <p>Fun fact, even a <em>method</em> is an object.</p>
         <pre><code class="ruby">
 12.methods
 m = 12.method("+")
@@ -393,6 +392,27 @@ end
 
 C.my_class_method
 C.new.my_instance_method
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Bang! and Question? Methods</h2>
+        <p>
+          Method names can end with <code>!</code>, <code>?</code> or <code>=</code>
+        </p>
+        <ul>
+          <li><code>!</code> means "watch out". Will raise exceptions and/or modify the object</li>
+          <li><code>?</code> means "boolean". Returns true or false</li>
+          <li><code>=</code> is for assignment</li>
+        </ul>
+        <pre><code class="ruby">
+array = [1,2,3,nil]
+array.compact       #=> [1,2,3]
+array               #=> [1,2,3, nil]
+array.compact!      #=> [1,2,3]
+array               #=> [1,2,3]
+
+array.include?(nil)  #=> false
         </code></pre>
       </section>
 
@@ -448,7 +468,7 @@ end
       </section>
 
       <section>
-        <h2>Method Syntax</h2>
+        <h2>Method Syntax (optional)</h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/doc/syntax/methods_rdoc.html">http://www.ruby-doc.org/core-2.1.1/doc/syntax/methods_rdoc.html</a>
         </p>
