@@ -92,6 +92,7 @@
         <ol>
           <li class="fragment">Learn about Ruby's syntax</li>
           <li class="fragment">Browse through Ruby's main structures and methods</li>
+          <li class="fragment">Practice and learn about Ruby's Built-in Types</li>
           <li class="fragment">Ruby best practices</li>
         </ol>
       </section>
@@ -548,6 +549,43 @@ C.new.my_instance_method
         </ul>
       </section>
 
+      <section>
+        <h2>Comparison Operators</h2>
+        <pre><code class='ruby'>
+          x == y  # returns true if two things are equal
+          x != y  # returns true if two things are not equal
+          x <= y  # returns true if x is less than or equal to y
+          x >= y  # returns true if x is greater than or equal to y
+          x < y   # returns true if x is less than y
+          x > y   # returns true if x is greater than y
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Flow Control</h2>
+        <ul>
+          <li class='fragment'>if / end</li>
+          <li class='fragment'>if / else / end</li>
+          <li class='fragment'>if / elsif / else / end</li>
+          <li class='fragment'>unless / end</li>
+          <li class='fragment current-visible'>unless / else / end</li>
+          <li class="fragment"><strike>unless / else / end</strike></li>
+          <li class="fragment">condition ? true : false</li>
+        </ul>
+        <pre class='fragment'><code class='ruby'>
+def user_status(user)
+  return 'unknown' unless user
+  if user.registered? and user.signed_in?
+    'logged'
+  elsif user.registered?
+    'disconnected'
+  else
+    urgent? ? 'please register now!' : 'please register later'
+  end
+end
+        </code></pre>
+      </section>
+
 <!--       <section>
         <h2>Ruby Koans!</h2>
         <p>
@@ -590,8 +628,9 @@ C.new.my_instance_method
           <li>Default value for if, unless, empty methods</li>
           <li>etc.</li>
         </ul>
+        <p class='fragment'>The <code>nil</code> object</p>
         <pre class='fragment'><code class='ruby'>
-nil.class
+nil.class   #=> NilClass
 nil.methods - Object.instance_methods
 nil.to_h
 nil.to_a
@@ -606,10 +645,10 @@ nil.to_i
           <a href="http://www.ruby-doc.org/core-2.1.1/Array.html">http://www.ruby-doc.org/core-2.1.1/Array.html</a>
         </p>
         <ul>
-          <li>Can hold objects of any data type</li>
-          <li>Includes Enumerable to iterate through objects</li>
+          <li class='fragment'>Can hold objects of any data type</li>
+          <li class='fragment'>Includes Enumerable to iterate through objects</li>
         </ul>
-        <pre><code class='ruby'>
+        <pre class='fragment'><code class='ruby'>
 [12, 35, 24].max
 array = [12, 35, 24]
 array.sort
@@ -624,11 +663,11 @@ array
           <a href="http://www.ruby-doc.org/core-2.1.1/Hash.html">http://www.ruby-doc.org/core-2.1.1/Hash.html</a>
         </p>
         <ul>
-          <li>Associates a key to some value</li>
-          <li>Includes Enumerable to iterate through pairs</li>
-          <li>Two syntaxes: hash-rocket and colon.</li>
+          <li class='fragment'>Associates a key to some value</li>
+          <li class='fragment'>Includes Enumerable to iterate through pairs</li>
+          <li class='fragment'>Two syntaxes: hash-rocket and colon.</li>
         </ul>
-        <pre><code class='ruby'>
+        <pre class='fragment'><code class='ruby'>
 fruit_bowl = {bananas: 2, coconut: 1, apples: 6}
 fruit_bowl.sort
 fruit_bowl.sort_by{|fruit,count| count}
@@ -673,18 +712,18 @@ poem.freeze
           Simply a name used in your program
         </p>
         <ul>
-          <li>works just like a variable</li>
-          <li>it is immutable after initialization</li>
-          <li>often use in Hash</li>
-          <li>Identical symbols are a single internal object</li>
-          <li><code class='ruby'>==</code> tests for object_id equality</li>
-          <li>Symbols are not strings, do not have the same methods</li>
-          <li>Cannot be concatenated</li>
-          <li>Far more memory efficient than String (40%)</li>
-          <li>Symbol are not marked for desctruction by Garbage Collector</li>
-          <li>Watch for memory leaks!</li>
+          <li class='fragment'>often use in Hash, i.e. <code>{status: :single}</code></li>
+          <li class='fragment'>works just like a variable</li>
+          <li class='fragment'>it is immutable after initialization</li>
+          <li class='fragment'>Identical symbols are a single internal object</li>
+          <li class='fragment'><code class='ruby'>==</code> tests for object_id equality</li>
+          <li class='fragment'>Symbols are not strings, do not have the same methods</li>
+          <li class='fragment'>Cannot be concatenated</li>
+          <li class='fragment'>Far more memory efficient than String (40%)</li>
+          <li class='fragment'>Symbol are not marked for desctruction by Garbage Collector</li>
+          <li class='fragment'>Watch for memory leaks!</li>
         </ul>
-        <pre><code class='ruby'>Symbol.all_symbols.inspect</code></pre>
+        <pre class='fragment'><code class='ruby'>Symbol.all_symbols.inspect</code></pre>
       </section>
 
       <section>
@@ -692,7 +731,7 @@ poem.freeze
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Regexp.html">http://www.ruby-doc.org/core-2.1.1/Regexp.html</a>
         </p>
-        <p>Regular expressions (regexps) are patterns which describe the contents of a string.</p>
+        <p>Regular expressions (regexps) are patterns which describe the contents of a string. They’re used for testing whether a string contains a given pattern, or extracting the portions that match.</p>
         <p>
           <a href="http://regexcrossword.com/">http://regexcrossword.com/</a>
         </p>
@@ -745,8 +784,6 @@ end
 5432168765138465138464321584643.object_id   #=> Never the same
 7.odd?      #=> true
 6.even?     #=> true
-5.downto(1) { |n| print n, ".. " } ; print "  Liftoff!\n"
-#=> "5.. 4.. 3.. 2.. 1..   Liftoff!"
         </code></pre>
       </section>
 
@@ -760,6 +797,7 @@ end
 1.0 == 1      #=> true
 1.0.eql?(1)   #=> false
 1.2.floor     #=> 1
+1.2.ceil      #=> 2
         </code></pre>
       </section>
 
@@ -768,10 +806,9 @@ end
         <p><a href="http://www.ruby-doc.org/core-2.1.1/Range.html">http://www.ruby-doc.org/core-2.1.1/Range.html</a></p>
         <p>A Range represents an interval—a set of values with a beginning and an end</p>
         <pre><code class='ruby'>
-(-1..-5).to_a      #=> []
-(-5..-1).to_a      #=> [-5, -4, -3, -2, -1]
 ('a'..'e').to_a    #=> ["a", "b", "c", "d", "e"]
 ('a'...'e').to_a   #=> ["a", "b", "c", "d"]
+(-5..-1).to_a      #=> [-5, -4, -3, -2, -1]
         </code></pre>
       </section>
 
@@ -809,43 +846,7 @@ end
 times3 = gen_times(3)
 times3.class                  #=> Proc
 times3.call(5)                #=> 15
-yield_times(5, &times3)       #=> Yielding times! 15
-        </code></pre>
-      </section>
-
-      <section>
-        <h2>Comparison Operators</h2>
-        <pre><code class='ruby'>
-          x == y  # returns true if two things are equal
-          x != y  # returns true if two things are not equal
-          x <= y  # returns true if x is less than or equal to y
-          x >= y  # returns true if x is greater than or equal to y
-          x < y   # returns true if x is less than y
-          x > y   # returns true if x is greater than y
-        </code></pre>
-      </section>
-
-      <section>
-        <h2>Flow Control</h2>
-        <ul>
-          <li class='fragment'>if / end</li>
-          <li class='fragment'>if / else / end</li>
-          <li class='fragment'>if / elsif / else / end</li>
-          <li class='fragment'>unless / end</li>
-          <li class='fragment current-visible'>unless / else / end</li>
-          <li class="fragment"><strike>unless / else / end</strike></li>
-        </ul>
-        <pre class='fragment'><code class='ruby'>
-def user_status(user)
-  return 'unknown' unless user
-  if user.registered? and user.signed_in?
-    'logged'
-  elsif user.registered?
-    'disconnected'
-  else
-    urgent? ? 'please register now!' : 'please register later'
-  end
-end
+yield_times(5, &amp;times3)       #=> Yielding times! 15
         </code></pre>
       </section>
 
@@ -866,9 +867,8 @@ end
       <section>
         <h2>Switch Statement</h2>
         <ul>
-          <li>Acts like a big if / else if / else chain.</li>
+          <li>Acts like a big if / elsif / else chain.</li>
           <li>Checks a value against a list of cases, and executes the first case that is true.</li>
-          <li>Code Smell</li>
         </ul>
         <pre><code class='ruby'>
 a = ["4"]
@@ -925,10 +925,10 @@ dave.greeting #=> "Hello Dave!"
           Exception objects carry information about the exception – its type (the exception’s class name), an optional descriptive string, and optional traceback information.
         </p>
         <ul>
-          <li>StandardError (default for rescue)</li>
-          <li>RuntimeError (default for raise)</li>
-          <li>NoMethodError (undefined method)</li>
-          <li>ArgumentError</li>
+          <li><code>StandardError</code> (default for rescue)</li>
+          <li><code>RuntimeError</code> (default for raise)</li>
+          <li><code>NoMethodError</code> (undefined method)</li>
+          <li><code>ArgumentError</code></li>
         </ul>
       </section>
 
@@ -1054,10 +1054,10 @@ p australia   #=> &lt;OpenStruct country="Australia" population=20000000&gt;
       <section>
         <h2>Useful tips</h2>
         <ul>
-          <li>method_missing</li>
-          <li>Short-circuit and</li>
-          <li>Conditional assignment</li>
-          <li>inline statements</li>
+          <li class="fragment">method_missing</li>
+          <li class="fragment">Short-circuit and</li>
+          <li class="fragment">Conditional assignment</li>
+          <li class="fragment">inline statements</li>
         </ul>
       </section>
 
@@ -1067,10 +1067,10 @@ p australia   #=> &lt;OpenStruct country="Australia" population=20000000&gt;
           Handles method calls that aren’t previously defined
         </p>
         <ul>
-          <li>You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
-          <li>Useful to delegate to another object</li>
-          <li>Handling methods dynamically</li>
-          <li>Let's see with duck.rb</li>
+          <li class="fragment">You *must* call super if you don't handle the method, otherwise you'll mess up Ruby's method lookup.</li>
+          <li class="fragment">Useful to delegate to another object</li>
+          <li class="fragment">Handling methods dynamically</li>
+          <li class="fragment">Let's see with duck.rb</li>
         </ul>
       </section>
 
@@ -1134,10 +1134,6 @@ end
       <section>
         <h2>Let's train!</h2>
         <p>
-          <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
-        </p>
-        <p>For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.</p>
-        <p>
           <a href="http://www.codewars.com/kata/52a1feca5ec9c508d10006f8">Fluent Calculator</a>
         </p>
         <p>The goal is to implement simple calculator which uses fluent syntax:</p>
@@ -1147,6 +1143,10 @@ Calc.new.five.minus.six           # Should return -1
 Calc.new.seven.times.two          # Should return 14
 Calc.new.nine.divided_by.three    # Should return 3
         </code></pre>
+        <p>
+          <a href="http://www.codewars.com/kata/515bb423de843ea99400000a/train/ruby">Pagination Helper</a>
+        </p>
+        <p>For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.</p>
       </section>
 
       <section>
