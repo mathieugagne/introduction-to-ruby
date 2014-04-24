@@ -267,6 +267,29 @@ end
       </section>
 
       <section>
+        <h2>Ruby identifiers</h2>
+        <ul>
+          <li class="fragment"><code class="ruby">name</code> could be a local variable, scoped to its immediate definition</li>
+          <li class="fragment"><code class="ruby">@name</code> is an instance variable, scoped to the instance</li>
+          <li class="fragment"><code class="ruby">$name</code> is a global variable, accessable from anywhere.</li>
+          <li class="fragment">It is not recommended to use global variables. They make programs cryptic.</li>
+          <li class="fragment">Class names start with uppercase letter</li>
+          <li class="fragment">method_name same as local variable but can end with ? or ! or =</li>
+          <li class="fragment">literals like "foo", [1,2], true, {a: 1, b: 2}</li>
+          <li class="fragment">A few reserved words (<code>def</code>) and weirdos(<code>__FILE__</code>)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ruby Naming Conventions</h2>
+        <ul>
+          <li class="fragment">methods and variables are in <code>snake_case</code></li>
+          <li class="fragment">classes and moduls are in <code>CamelCase</code></li>
+          <li class="fragment">constants are in ALL_CAPS with underscores</li>
+        </ul>
+      </section>
+
+      <section>
         <h2>Syntax</h2>
         <p>
           <a href="https://github.com/mathieugagne/introduction-to-ruby/blob/master/example.rb">
@@ -477,32 +500,6 @@ end
           <li>Yield blocks</li>
           <li>Keyword Arguments</li>
         </ul>
-      </section>
-
-      <section>
-        <h2>attr_ .. helpers</h2>
-        <ul>
-          <li class="fragment">attr_reader: creates a method to read the associated instance variable</li>
-          <li class="fragment">attr_writer: creates a method to write to the associated instance variable</li>
-          <li class="fragment">attr_accessor: adds both attr_reader & attr_writer methods</li>
-        </ul>
-        <pre class="fragment"><code class="ruby">
-class Pony
-  attr_accessor :name
-
-  # same as
-  attr_reader :name
-  attr_writer :name
-
-  # same as
-  def name
-    @name
-  end
-  def name=(value)
-    @name = value
-  end
-end
-        </code></pre>
       </section>
 
       <section>
@@ -728,6 +725,7 @@ end
 #=> "5.. 4.. 3.. 2.. 1..   Liftoff!"
         </code></pre>
       </section>
+
       <section>
         <h2>Float</h2>
         <p>
@@ -925,6 +923,32 @@ rescue ArgumentError => ex
   puts ex.message #=> 'Argument is not numeric'
 rescue AnoterError => ex
   puts ex.backtrace.inspect
+end
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>attr_ .. helpers</h2>
+        <ul>
+          <li class="fragment">attr_reader: creates a method to read the associated instance variable</li>
+          <li class="fragment">attr_writer: creates a method to write to the associated instance variable</li>
+          <li class="fragment">attr_accessor: adds both attr_reader & attr_writer methods</li>
+        </ul>
+        <pre class="fragment"><code class="ruby">
+class Pony
+  attr_accessor :name
+
+  # same as
+  attr_reader :name
+  attr_writer :name
+
+  # same as
+  def name
+    @name
+  end
+  def name=(value)
+    @name = value
+  end
 end
         </code></pre>
       </section>
