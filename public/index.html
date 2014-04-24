@@ -132,7 +132,7 @@
           Ruby favors readability and variety over consision and perfection.
         </p>
         <blockquote>
-          I believe people want to express themselves when they program. They don't want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.<br/ >
+          I believe people want to <strong>express</strong> themselves when they program. They don't want to fight with the language. Programming languages must feel <strong>natural</strong> to programmers. I tried to make people <strong>enjoy</strong> programming and concentrate on the <strong>fun</strong> and <strong>creative</strong> part of programming when they use Ruby.<br/ >
           <br/ >
           <cite>- Matz</cite>
         </blockquote>
@@ -191,9 +191,9 @@
       </section>
 
       <section>
-        <h2>Extensibility</h2>
+        <h2>Extensibility (Monkey Patching)</h2>
         <p>
-          Monkey Patching: Extend or modify the run-time code of dynamic languages without altering the original source code
+          Extend or modify the run-time code of dynamic languages without altering the original source code
         </p>
         <br>
         <p style='text-align:left;' class='fragment'>Examples</p>
@@ -206,24 +206,26 @@
 
       <section>
         <p>
-          In Ruby, classes are never closed: methods can always be added to an existing class. This applies to all classes, including the standard, built-in classes.
+          In Ruby, classes are never closed. Methods can always be added to an existing class. This applies to all classes, including the standard, built-in classes.
         </p>
         <pre><code class='ruby'>
 # re-open Ruby's Time class
 class Time
   def self.yesterday
-    now - 86400
+    now - 1.day
   end
 end
 
-today = Time.now              # => 2013-09-03 16:09:37 +0300
-yesterday = Time.yesterday    # => 2013-09-02 16:09:37 +0300
+today = Time.now              # => 2014-04-24 14:43:44 -0400
+yesterday = Time.yesterday    # => 2014-04-23 14:43:44 -0400
         </code></pre>
       </section>
 
       <section>
         <h2>Or use it to troll</h2>
-        <p>The answer to life the universe and everything</p>
+        <p>
+          <img src="http://www.thirdoptionmen.org/wp-content/uploads/2012/03/answer-everything.jpg" />
+        </p>
         <pre><code class="ruby">
 "43".to_i #=> 144
 
@@ -281,7 +283,7 @@ end
         <h2>Ruby Naming Conventions</h2>
         <ul>
           <li class="fragment">methods and variables are in <code>snake_case</code></li>
-          <li class="fragment">classes and moduls are in <code>CamelCase</code></li>
+          <li class="fragment">classes and modules are in <code>CamelCase</code></li>
           <li class="fragment">constants are in ALL_CAPS with underscores</li>
         </ul>
       </section>
