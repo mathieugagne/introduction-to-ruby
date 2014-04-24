@@ -673,42 +673,6 @@ end
       </section>
 
       <section>
-        <h2>Comparison Operators</h2>
-        <pre><code class='ruby'>
-          x == y  # returns true if two things are equal
-          x != y  # returns true if two things are not equal
-          x <= y  # returns true if x is less than or equal to y
-          x >= y  # returns true if x is greater than or equal to y
-          x < y   # returns true if x is less than y
-          x > y   # returns true if x is greater than y
-        </code></pre>
-      </section>
-
-      <section>
-        <h2>Flow Control</h2>
-        <ul>
-          <li class='fragment'>if / end</li>
-          <li class='fragment'>if / else / end</li>
-          <li class='fragment'>if / elsif / else / end</li>
-          <li class='fragment'>unless / end</li>
-          <li class='fragment current-visible'>unless / else / end</li>
-          <li class="fragment"><strike>unless / else / end</strike></li>
-        </ul>
-        <pre class='fragment'><code class='ruby'>
-def user_status(user)
-  return 'unknown' unless user
-  if user.registered? and user.signed_in?
-    'logged'
-  elsif user.registered?
-    'disconnected'
-  else
-    urgent? ? 'please register now!' : 'please register later'
-  end
-end
-        </code></pre>
-      </section>
-
-      <section>
         <h2>Numeric</h2>
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Numeric.html">http://www.ruby-doc.org/core-2.1.1/Numeric.html</a>
@@ -761,6 +725,65 @@ end
 end
 # Try this:
 [1,2,3,4].each { |number| puts number }
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Proc</h2>
+        <p><a href="http://www.ruby-doc.org/core-2.1.1/Proc.html">http://www.ruby-doc.org/core-2.1.1/Proc.html</a></p>
+        <p>
+          Proc objects are blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables. It is a function object, an object to be invoked or called as if it were an ordinary function.
+        </p>
+        <pre><code class='ruby'>
+def gen_times(factor)
+  Proc.new {|n| n*factor }
+end
+
+def yield_times(n)
+  print "Yielding times!"
+  yield(n)
+end
+
+times3 = gen_times(3)
+times3.class                  #=> Proc
+times3.call(5)                #=> 15
+yield_times(5, &times3)       #=> Yielding times! 15
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Comparison Operators</h2>
+        <pre><code class='ruby'>
+          x == y  # returns true if two things are equal
+          x != y  # returns true if two things are not equal
+          x <= y  # returns true if x is less than or equal to y
+          x >= y  # returns true if x is greater than or equal to y
+          x < y   # returns true if x is less than y
+          x > y   # returns true if x is greater than y
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Flow Control</h2>
+        <ul>
+          <li class='fragment'>if / end</li>
+          <li class='fragment'>if / else / end</li>
+          <li class='fragment'>if / elsif / else / end</li>
+          <li class='fragment'>unless / end</li>
+          <li class='fragment current-visible'>unless / else / end</li>
+          <li class="fragment"><strike>unless / else / end</strike></li>
+        </ul>
+        <pre class='fragment'><code class='ruby'>
+def user_status(user)
+  return 'unknown' unless user
+  if user.registered? and user.signed_in?
+    'logged'
+  elsif user.registered?
+    'disconnected'
+  else
+    urgent? ? 'please register now!' : 'please register later'
+  end
+end
         </code></pre>
       </section>
 
