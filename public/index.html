@@ -374,11 +374,14 @@ Whale.included_modules  #=> [Animal::Mammal, Kernel]
           <li class="fragment">Use inheritance to share behavior</li>
         </ul>
         <pre class='fragment'><code class="ruby">
-class SouthernWhale < Whale
+class SouthernRightWhale < Whale
   def endangered?
     true
   end
 end
+whale = SouthernRightWhale.new
+whale.lay_eggs?                #=> false
+SouthernRightWhale.ancestors   #=> [SouthernRightWhale, Whale, Animal::Mammal, ...]
         </code></pre>
       </section>
 
