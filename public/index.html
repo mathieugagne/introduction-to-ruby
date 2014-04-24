@@ -714,6 +714,18 @@ end
       </section>
 
       <section>
+        <h2>Range</h2>
+        <p><a href="http://www.ruby-doc.org/core-2.1.1/Range.html">http://www.ruby-doc.org/core-2.1.1/Range.html</a></p>
+        <p>A Range represents an interval—a set of values with a beginning and an end</p>
+        <pre><code class='ruby'>
+(-1..-5).to_a      #=> []
+(-5..-1).to_a      #=> [-5, -4, -3, -2, -1]
+('a'..'e').to_a    #=> ["a", "b", "c", "d", "e"]
+('a'...'e').to_a   #=> ["a", "b", "c", "d"]
+        </code></pre>
+      </section>
+
+      <section>
         <h2>Block</h2>
         <p>You can iterate over the elements in an array using Array.each, which takes a block.</p>
         <p>A block is a chunk of code that lives inside a control statement, loop, method definition, or method call. It returns the value of its last line. In Ruby, blocks can be created two ways: with braces or with a do/end statement.</p>
