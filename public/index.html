@@ -391,9 +391,19 @@ SouthernRightWhale.ancestors   #=> [SouthernRightWhale, Whale, Animal::Mammal, .
           <a href="http://ruby-doc.org/core-2.1.1/Object.html">http://ruby-doc.org/core-2.1.1/Object.html</a>
         </p>
         <ul>
-          <li>Object is the default root of all Ruby objects</li>
-          <li>Every object has a class, <code>Object</code> if nothing else</li>
-          <li>When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
+          <li class="fragment">Object is the default root of all Ruby objects</li>
+          <li class="fragment">Every object has a class, <code>Object</code> if nothing else</li>
+          <li class="fragment">
+            Implements most constants and generic methods
+            <ul>
+              <li><code>ENV</code> for environment variables</li>
+              <li><code>#object_id</code></li>
+              <li><code>#kind_of?</code></li>
+              <li><code>#to_s</code></li>
+              <li><code>#methods</code></li>
+            </ul>
+          </li>
+          <li class="fragment">When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
         </ul>
       </section>
 
