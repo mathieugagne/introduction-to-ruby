@@ -298,7 +298,7 @@ end
         </p>
         <ul>
           <li class="fragment">White space and line endings</li>
-          <li class="fragment">dot operator</li>
+          <li class="fragment"><code>dot operator</code> sends a message to an object</li>
           <li class="fragment">Comments</li>
           <li class="fragment">Question/Exclamation Marks</li>
         </ul>
@@ -381,6 +381,7 @@ Whale.included_modules  #=> [Animal::Mammel, Kernel]
         </p>
         <ul>
           <li>Object is the default root of all Ruby objects</li>
+          <li>Every object has a class, <code>Object</code> if nothing else</li>
           <li>When referencing constants in classes inheriting from Object you do not need to use the full namespace</li>
         </ul>
       </section>
@@ -951,6 +952,21 @@ class Pony
   end
 end
         </code></pre>
+      </section>
+
+      <section>
+        <h2><code>load</code> and <code>require</code></h2>
+        <ul>
+          <li><code>load</code> inserts a file's contents into the current file</li>
+          <li>
+            <code>require</code> makes a <em>feature</em> available to the current file
+            <ul>
+              <li>skips already-loaded files</li>
+              <li>omits the trailing .rb</li>
+              <li>can also be used for extensions written in C (.so, .dll, etc.)</li>
+            </ul>
+          </li>
+        </ul>
       </section>
 
       <section>
