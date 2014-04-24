@@ -288,6 +288,22 @@ yesterday = Time.yesterday    # => 2013-09-02 16:09:37 +0300
       </section>
 
       <section>
+        <h2>Or use it to troll</h2>
+        <p>The answer to life the universe and everything</p>
+        <pre><code class="ruby">
+"43".to_i #=> 144
+
+class String
+  def to_i
+    42
+  end
+end
+
+"43".to_i #=> 42
+        </code></pre>
+      </section>
+
+      <section>
         <h2>Syntax</h2>
         <p>
           <a href="https://github.com/mathieugagne/introduction-to-ruby/blob/master/example.rb">
