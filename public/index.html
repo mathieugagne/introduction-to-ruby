@@ -397,10 +397,30 @@ m.call(20)   #=> 32
       </section>
 
       <section>
-        <h2>Methods</h2>
-        <p>
-          Access Levels: public, protected, private
-        </p>
+        <h2>Method Scope</h2>
+        <pre><code class="ruby">
+class C
+  def my_instance_method
+    # ...
+  end
+
+  def self.my_class_method
+    # ...
+  end
+end
+
+C.my_class_method
+C.new.my_instance_method
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Method Access Levels</h2>
+        <ul>
+          <li>public</li>
+          <li>protected</li>
+          <li>private</li>
+        </ul>
         <ul>
           <li class="fragment">Defaults to public</li>
           <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
