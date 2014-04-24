@@ -423,24 +423,6 @@ m.call(20)   #=> 32
       </section>
 
       <section>
-        <h2>Method Scope</h2>
-        <pre><code class="ruby">
-class C
-  def my_instance_method
-    # ...
-  end
-
-  def self.my_class_method
-    # ...
-  end
-end
-
-C.my_class_method
-C.new.my_instance_method
-        </code></pre>
-      </section>
-
-      <section>
         <h2>Bang! and Question? Methods</h2>
         <p>
           Method names can end with <code>!</code>, <code>?</code> or <code>=</code>
@@ -459,22 +441,6 @@ array               #=> [1,2,3]
 
 array.include?(nil)  #=> false
         </code></pre>
-      </section>
-
-      <section>
-        <h2>Method Access Levels</h2>
-        <ul>
-          <li>public</li>
-          <li>protected</li>
-          <li>private</li>
-        </ul>
-        <ul>
-          <li class="fragment">Defaults to public</li>
-          <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
-          <li class="fragment">private methods can be called only from within the calling object</li>
-          <li class="fragment">You cannot access another instance's private methods directly.</li>
-          <li class="fragment">protected vs private, follow example with dwarf.rb</li>
-        </ul>
       </section>
 
       <section>
@@ -510,6 +476,42 @@ def some_method(name)
   end
 end
         </code></pre>
+      </section>
+
+      <section>
+        <h2>Method Scope</h2>
+        <p>Method lookup chain: follow ancestors chain until we find a candidate</p>
+        <p>Use <code>self</code> to define methods on the class itself</p>
+        <pre><code class="ruby">
+class C
+  def my_instance_method
+    # ...
+  end
+
+  def self.my_class_method
+    # ...
+  end
+end
+
+C.my_class_method
+C.new.my_instance_method
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Method Access Levels</h2>
+        <ul>
+          <li>public</li>
+          <li>protected</li>
+          <li>private</li>
+        </ul>
+        <ul>
+          <li class="fragment">Defaults to public</li>
+          <li class="fragment">protected methods can be called by any instance of the defining class or its subclasses</li>
+          <li class="fragment">private methods can be called only from within the calling object</li>
+          <li class="fragment">You cannot access another instance's private methods directly.</li>
+          <li class="fragment">protected vs private, follow example with dwarf.rb</li>
+        </ul>
       </section>
 
       <section>
