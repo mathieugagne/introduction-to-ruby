@@ -273,7 +273,7 @@ end
           <li class="fragment"><code class="ruby">$name</code> is a global variable, accessable from anywhere.</li>
           <li class="fragment">It is not recommended to use global variables. They make programs cryptic.</li>
           <li class="fragment">Class names start with uppercase letter</li>
-          <li class="fragment">method_name same as local variable but can end with ? or ! or =</li>
+          <li class="fragment">methods same as local variable but can end with ?, ! or =</li>
           <li class="fragment">literals like "foo", [1,2], true, {a: 1, b: 2}</li>
           <li class="fragment">A few reserved words (<code>def</code>) and weirdos(<code>__FILE__</code>)</li>
         </ul>
@@ -330,7 +330,6 @@ end
           <li class="fragment">class</li>
           <li class="fragment">object / instance</li>
           <li class="fragment">method</li>
-          <li class="fragment">attribute accessors</li>
           <li class="fragment">variables</li>
         </ul>
       </section>
@@ -340,13 +339,15 @@ end
         <p>
           <a href="http://www.ruby-doc.org/core-2.1.1/Module.html">http://www.ruby-doc.org/core-2.1.1/Module.html</a>
         </p>
+        <p>Usage:</p>
         <ul>
           <li class="fragment">Namespacing</li>
           <li class="fragment">Hold and share behavior</li>
+          <li class="fragment">Use <code>include</code> to share behavior</li>
         </ul>
         <pre class='fragment'><code class="ruby">
 module Animal
-  module Mammel
+  module Mammal
     def lay_eggs?
       false
     end
@@ -354,10 +355,10 @@ module Animal
 end
 #...
 class Whale
-  include Animal::Mammel
+  include Animal::Mammal
 end
 Whale.new.lay_eggs?     #=> false
-Whale.included_modules  #=> [Animal::Mammel, Kernel]
+Whale.included_modules  #=> [Animal::Mammal, Kernel]
         </code></pre>
       </section>
 
@@ -370,7 +371,15 @@ Whale.included_modules  #=> [Animal::Mammel, Kernel]
           <li class="fragment">Holds shared behavior</li>
           <li class="fragment">Object Factory, Acts as an instance factory</li>
           <li class="fragment">Subclass of Module</li>
+          <li class="fragment">Use inheritance to share behavior</li>
         </ul>
+        <pre class='fragment'><code class="ruby">
+class SouthernWhale < Whale
+  def endangered?
+    true
+  end
+end
+        </code></pre>
       </section>
 
       <section>
